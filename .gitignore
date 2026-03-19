@@ -1,0 +1,30 @@
+# Ignore compiled files, system files, and dependencies
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env
+.env.local
+
+# IDE
+*.pyc
+__pycache__/
+*.log
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Optional npm files (if adding Node.js projects later)
+node_modules/
+npm-debug.log
+
+# Optional Python files (if adding Python projects later)
+venv/
+env/
+*.egg-info/
+dist/
+build/
