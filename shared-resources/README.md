@@ -21,4 +21,3 @@ These resources are meant to be supplementary and cross-course references. Detai
 
 ---
 
-**Last Updated**: March 19, 2026

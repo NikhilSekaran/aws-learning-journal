@@ -29,23 +29,23 @@ This course introduces AWS services and core concepts that form the foundation o
 
 **Course Progress**: 30% (4 of 13 modules completed on AWS Skill Builder)
 
-**Notes in Repo**: 8% (1 of 13 modules documented)
+**Notes in Repo**: 15% (2 of 13 modules documented)
 
-| Module | Course Status | Notes in Repo |
-|--------|--------------|---------------|
-| 1. Introduction to the Cloud | ✅ Completed | ✅ Done |
-| 2. Compute in the Cloud | ✅ Completed | ⏳ Pending |
-| 3. Exploring Compute Services | ✅ Completed | ⏳ Pending |
-| 4. Going Global | ✅ Completed | ⏳ Pending |
-| 5. Networking | 🔄 In Progress | ⏳ Pending |
-| 6. Storage | ⏳ Not Started | ⏳ Pending |
-| 7. Databases | ⏳ Not Started | ⏳ Pending |
-| 8. AI/ML and Data Analytics | ⏳ Not Started | ⏳ Pending |
-| 9. Security | ⏳ Not Started | ⏳ Pending |
-| 10. Monitoring, Compliance & Governance | ⏳ Not Started | ⏳ Pending |
-| 11. Pricing and Support | ⏳ Not Started | ⏳ Pending |
-| 12. Migrating to the AWS Cloud | ⏳ Not Started | ⏳ Pending |
-| 13. Well-Architected Solutions | ⏳ Not Started | ⏳ Pending |
+| Module                                  | Course Status  | Notes in Repo |
+|-----------------------------------------|----------------|---------------|
+| 1. Introduction to the Cloud            | ✅ Completed    | ✅ Done        |
+| 2. Compute in the Cloud                 | ✅ Completed    | ✅ Done        |
+| 3. Exploring Compute Services           | ✅ Completed    | ⏳ Pending     |
+| 4. Going Global                         | ✅ Completed    | ⏳ Pending     |
+| 5. Networking                           | 🔄 In Progress | ⏳ Pending     |
+| 6. Storage                              | ⏳ Not Started  | ⏳ Pending     |
+| 7. Databases                            | ⏳ Not Started  | ⏳ Pending     |
+| 8. AI/ML and Data Analytics             | ⏳ Not Started  | ⏳ Pending     |
+| 9. Security                             | ⏳ Not Started  | ⏳ Pending     |
+| 10. Monitoring, Compliance & Governance | ⏳ Not Started  | ⏳ Pending     |
+| 11. Pricing and Support                 | ⏳ Not Started  | ⏳ Pending     |
+| 12. Migrating to the AWS Cloud          | ⏳ Not Started  | ⏳ Pending     |
+| 13. Well-Architected Solutions          | ⏳ Not Started  | ⏳ Pending     |
 
 ## 📚 Module Structure
 
@@ -76,7 +76,7 @@ Core services:
 - Instance types and pricing models
 - Scaling considerations
 
-[Notes Template](modules/module-02-compute-in-the-cloud/notes.md)
+[Full Notes](modules/module-02-compute-in-the-cloud/notes.md) | [Q&A Review](modules/module-02-compute-in-the-cloud/qa-review.md)
 
 ### Module 3: Exploring Compute Services
 **Status**: ✅ Completed
@@ -224,4 +224,3 @@ After completing all 13 modules:
 ---
 
 **Course Started**: March 2026  
-**Last Updated**: March 19, 2026

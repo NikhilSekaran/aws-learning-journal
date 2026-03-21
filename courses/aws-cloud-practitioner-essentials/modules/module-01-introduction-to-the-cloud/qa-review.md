@@ -5,12 +5,14 @@
 **How to Use:**
 1. Read each question and try to answer without looking
 2. Check your answer against the provided explanation
-3. Mark ✅ if correct, ⏳ if need more review
+3. Mark ✅ if correct, ⏳ if it needs more review
 4. Focus on ⏳ questions for final study
+
+**Reference Notes:** [notes.md](notes.md)
 
 ---
 
-## Foundations 1: Client-Server Model & Pay-as-You-Go
+## Topic 1: Client-Server Model & Pay-as-You-Go
 
 ### Q1: Client-Server Model
 
@@ -25,10 +27,16 @@ Which scenario BEST describes how the client-server model works in this analogy?
 - C) The customer makes their own coffee using the coffee shop equipment without interacting with the barista. This describes how the client does not require the server.
 - D) The customer goes to the barista and places an order for a coffee. The barista prepares the coffee and hands it back to the customer. This describes how the client places the request, and the server responds.
 
-**Answer:** **D**
+**Answer:** **D) The customer goes to the barista and places an order for a coffee. The barista prepares the coffee and hands it back to the customer.**
 
 **Explanation:**
 The correct answer describes the fundamental client-server interaction: the client (customer) initiates a request, the server (barista) processes it, and returns a response. The other options represent breakdowns in this model where either the client doesn't request, the server doesn't respond appropriately, or the client acts independently without server involvement.
+---
+
+**Why not the others:**
+- A) Self-serve station ✗ No client-server interaction; the client never makes a request
+- B) Barista acts without being asked ✗ Servers respond to requests; they don't push responses unprompted
+- C) Customer makes their own coffee ✗ Client operates independently; no server (barista) is involved
 
 ---
 
@@ -37,12 +45,25 @@ The correct answer describes the fundamental client-server interaction: the clie
 **Question:**
 Which aspect of AWS cloud computing best demonstrates the principle of paying only for what you use?
 
-**Answer:**
+**Options:**
+- A) AWS requires annual prepayment for all services before use
+- B) Bills are fixed monthly regardless of actual resource consumption
+- C) Your bill is variable, tied to actual consumption, with no upfront costs
+- D) AWS provides a flat rate regardless of how many resources you use
+
+**Answer:** **C) Your bill is variable, tied to actual consumption**
+
+**Explanation:**
 AWS billing is fundamentally different from traditional on-premises models in that your bill is variable month-to-month based on actual consumption. There is no need for large upfront investment or fixed costs. You can start small, scale as needed, and only pay for the resources you actually consume during each billing period.
+
+**Why not the others:**
+- Annual prepayment ✗ AWS never requires upfront payment; you pay for what you use
+- Fixed monthly bills ✗ Costs vary with consumption; low-traffic months cost less
+- Flat rate ✗ AWS pricing is based on actual usage, not a flat rate
 
 ---
 
-## Foundations 2: Cloud Deployment Types
+## Topic 2: Cloud Deployment Types
 
 ### Q3: Deployment Model Selection
 
@@ -61,10 +82,16 @@ Which type of cloud deployment does this situation describe?
 
 **Explanation:**
 This scenario describes a hybrid deployment because the organization combines both on-premises infrastructure (for compliance-sensitive data) and cloud-based resources (for scalability). The organization is not purely cloud-based and not purely on-premises, but rather using both approaches for different needs.
+---
+
+**Why not the others:**
+- A) On-premises ✗ Doesn't provide the cloud-based scaling the organization needs
+- B) Public cloud ✗ Can't keep compliance-sensitive data within the country on public cloud alone
+- D) Data-compliance deployment ✗ Not a recognised AWS deployment model
 
 ---
 
-## Foundations 3: Six Key Benefits
+## Topic 3: Six Key Benefits & Cost Model
 
 ### Q4: Capacity Planning
 
@@ -83,10 +110,16 @@ Which benefit of the AWS Cloud is most relevant to this situation?
 
 **Explanation:**
 The retail business's challenge is specifically about capacity prediction. AWS addresses this through the ability to dynamically scale resources up or down based on demand, eliminating the need to guess or pre-provision infrastructure. This is the benefit most directly relevant to their situation.
+---
+
+**Why not the others:**
+- A) Stop spending on data centers ✗ Relevant to cost reduction, not the capacity prediction problem described
+- C) Trade upfront for variable expense ✗ About payment model, not the ability to scale capacity on demand
+- D) Go global in minutes ✗ About geographic reach, not adjusting server capacity
 
 ---
 
-## Foundations 4: AWS Global Infrastructure
+## Topic 4: AWS Global Infrastructure
 
 ### Q5: High Availability
 
@@ -105,10 +138,16 @@ Which statement BEST describes the AWS Global Infrastructure benefit of high ava
 
 **Explanation:**
 High availability is achieved through geographic distribution and redundancy. By having multiple data centers across different regions, AWS ensures that if one location experiences issues, your website or application can continue to operate from other locations. Single points of failure (whether centralized storage or a single data center) do not provide high availability.
+---
+
+**Why not the others:**
+- A) Single storage bucket ✗ Centralizing data in one location is a single point of failure, not high availability
+- B) Customer support availability ✗ Describes AWS documentation/support, not infrastructure high availability
+- D) Single high-security data center ✗ A single data center is a single point of failure regardless of how secure it is
 
 ---
 
-## Foundations 5: AWS Shared Responsibility Model
+## Topic 5: AWS Shared Responsibility Model
 
 ### Q6: OS Patching Responsibility
 
@@ -127,18 +166,37 @@ Which statement BEST describes which party is responsible for applying security 
 
 **Explanation:**
 Under the AWS Shared Responsibility Model, customers are fully responsible for patching the operating system. AWS does not have access to customer instances and cannot apply patches on their behalf. AWS can notify customers of available patches, but the deployment responsibility lies entirely with the customer organization.
+---
+
+**Why not the others:**
+- A) AWS is responsible ✗ AWS is responsible for the infrastructure (hypervisor, hardware), not the OS inside your instances
+- C) Both apply separate patches ✗ AWS has no access to your OS; only the customer can apply OS patches
+- D) OS vendor applies patches ✗ OS vendors release patches, but it is the customer's responsibility to apply them
 
 ---
 
-## Foundations 6: Real-World Application & Additional Certification/Interview Questions
+## Topic 6: Real-World Application & Certification/Interview Questions
 
 ### Q7: Cloud Computing Definition Components
 
 **Question:**
 Cloud computing is defined as "the on-demand delivery of IT resources over the internet with pay-as-you-go pricing." Which component of this definition allows businesses to avoid large upfront infrastructure investments?
 
-**Answer:**
+**Options:**
+- A) "On-demand delivery" - provides immediate access to IT resources without procurement delays
+- B) "Over the internet" - removes the need for local physical infrastructure
+- C) "Pay-as-you-go pricing" - eliminates large upfront capital expenditure
+- D) "IT resources" - describes the compute, storage, and database services available
+
+**Answer:** **C) "Pay-as-you-go pricing"**
+
+**Explanation:**
 The **"pay-as-you-go pricing"** component allows businesses to avoid large upfront investments. This model means customers only pay for the resources they actually consume, without pre-paying for capacity or committing to long-term contracts. This contrasts with traditional on-premises infrastructure that requires significant capital expenditure upfront.
+
+**Why not the others:**
+- "On-demand delivery" ✗ Relates to access speed and availability, not cost structure
+- "Over the internet" ✗ Describes the delivery mechanism, not the pricing model
+- "IT resources" ✗ Describes what is available, not how it is paid for
 
 ---
 
@@ -165,8 +223,21 @@ AWS launched its first public infrastructure service in November 2004 with Amazo
 **Question:**
 Your company traditionally runs two data centers and spends $500,000 annually on infrastructure regardless of actual usage. You're considering migrating to AWS. Which statement best describes how AWS's "Trade fixed expense for variable expense" benefit would impact your business?
 
-**Answer:**
+**Options:**
+- A) You continue paying $500,000 annually but receive better hardware performance
+- B) AWS charges a one-time migration fee, then eliminates all infrastructure costs
+- C) Infrastructure costs become variable, tied to actual monthly consumption
+- D) You pay $500,000 upfront to AWS instead of managing your own data centers
+
+**Answer:** **C) Infrastructure costs become variable, tied to actual monthly consumption**
+
+**Explanation:**
 With AWS, your infrastructure costs would become variable and directly tied to consumption. Instead of paying a fixed $500,000 annually, you'd pay only for the computing resources you actually use each month. During low-usage months you pay less; during high-usage months you pay more. This allows better alignment between costs and business needs, and eliminates paying for unused capacity.
+
+**Why not the others:**
+- Same annual cost ✗ Variable pricing means you only pay for actual usage; costs typically drop
+- One-time migration fee ✗ AWS has no migration fee; ongoing costs are based on consumption
+- $500K upfront to AWS ✗ AWS has no upfront payment; pay-as-you-go eliminates capital expenditure
 
 ---
 
@@ -175,8 +246,21 @@ With AWS, your infrastructure costs would become variable and directly tied to c
 **Question:**
 Why can AWS pass cost savings to customers through "Benefit from Massive Economies of Scale"?
 
-**Answer:**
+**Options:**
+- A) AWS earns profit from large enterprises and uses it to subsidize small customer pricing
+- B) AWS bulk-purchases hardware and shares infrastructure across millions of customers, lowering per-unit costs for everyone
+- C) Only large AWS customers benefit; small businesses pay standard market rates
+- D) AWS buys hardware at market rate but charges customers less to grow market share
+
+**Answer:** **B) AWS bulk-purchases hardware and shares infrastructure across millions of customers**
+
+**Explanation:**
 AWS operates massive global data centers and purchases hardware in huge volumes. This bulk purchasing power results in lower per-unit costs for servers, storage, and networking equipment. Because AWS serves millions of customers sharing this infrastructure, the company can pass these volume discounts to all customers—from small startups to large enterprises—allowing even small companies to benefit from enterprise-grade infrastructure at lower costs.
+
+**Why not the others:**
+- Large enterprises subsidize small customers ✗ Cost reductions come from volume purchasing, not cross-subsidization
+- Only large customers benefit ✗ All customers benefit equally from the shared infrastructure economics
+- Below-market pricing for market share ✗ Lower costs come from operational efficiency, not subsidized pricing
 
 ---
 
@@ -185,8 +269,21 @@ AWS operates massive global data centers and purchases hardware in huge volumes.
 **Question:**
 A manufacturing company currently spends $2 million annually operating its on-premises data center, including facility costs, utilities, cooling, security staff, and hardware maintenance. They want to migrate to AWS. Which AWS benefit would be most relevant to reducing these operational costs?
 
-**Answer:**
+**Options:**
+- A) Stop guessing capacity - eliminating over-provisioned servers
+- B) Go global in minutes - deploying internationally with lower latency
+- C) Stop spending money to run and maintain data centers
+- D) Trade upfront expense for variable expense - moving to pay-as-you-go
+
+**Answer:** **C) Stop spending money to run and maintain data centers**
+
+**Explanation:**
 **"Stop spending money to run and maintain data centers"** would be most relevant. When migrating to AWS, the company eliminates all operational expenses associated with maintaining physical data center infrastructure: facility costs, electricity, cooling systems, security staff, and routine hardware maintenance. AWS takes responsibility for all physical infrastructure, allowing the company to redirect those resources toward innovation and business growth.
+
+**Why not the others:**
+- Stop guessing capacity ✗ Relevant to rightsizing, not eliminating physical facility costs
+- Go global in minutes ✗ Addresses geographic expansion, not operational cost reduction
+- Trade upfront for variable ✗ Overlapping benefit, but the $2M includes recurring operational costs, not just capital
 
 ---
 
@@ -195,8 +292,21 @@ A manufacturing company currently spends $2 million annually operating its on-pr
 **Question:**
 You are launching a new startup offering a SaaS product. You have customers in the US, Europe, and Asia. To provide low-latency service to all customers, you need infrastructure in multiple geographic locations. Traditionally this would require months and millions of dollars. How does AWS's "Go global in minutes" benefit apply?
 
-**Answer:**
-AWS provides Regions across the world (e.g., us-east, eu-west-1, ap-southeast-1). Instead of building and operating your own data centers in each region (which takes months or years and requires large CAPEX), you can deploy your application to AWS Regions in minutes. This allows a startup to reach global customers with low latency without the traditional infrastructure costs and timeline, democratizing global-scale operations.
+**Options:**
+- A) AWS ships hardware to your local offices worldwide within minutes of ordering
+- B) AWS provides global Regions, enabling deployment near all customers without building your own data centers
+- C) AWS's network speeds up international data transfer so one data center feels globally local
+- D) AWS partners with local ISPs in each country, reducing your time to establish a local presence
+
+**Answer:** **B) AWS provides global Regions, enabling deployment near all customers**
+
+**Explanation:**
+AWS provides Regions across the world (e.g., us-east-1, eu-west-1, ap-southeast-1). Instead of building and operating your own data centers in each region (which takes months or years and requires large CAPEX), you can deploy your application to AWS Regions in minutes. This allows a startup to reach global customers with low latency without the traditional infrastructure costs and timeline, democratizing global-scale operations.
+
+**Why not the others:**
+- Ships hardware ✗ AWS is cloud-based; no physical hardware is sent to you
+- Speeds up data transfer ✗ Reduced latency comes from geographic proximity of Regions, not network acceleration
+- Partners with local ISPs ✗ AWS operates its own global infrastructure; no ISP partnerships required
 
 ---
 
@@ -205,8 +315,21 @@ AWS provides Regions across the world (e.g., us-east, eu-west-1, ap-southeast-1)
 **Question:**
 What is the relationship between AWS Regions and Availability Zones?
 
-**Answer:**
+**Options:**
+- A) Regions and Availability Zones are the same thing; just different names for data centers
+- B) Availability Zones contain multiple Regions, connected by high-speed fiber
+- C) A Region is a geographic area containing 3 or more isolated Availability Zones
+- D) Each Region contains exactly one Availability Zone for maximum security isolation
+
+**Answer:** **C) A Region is a geographic area containing 3 or more isolated Availability Zones**
+
+**Explanation:**
 An **AWS Region** is a geographic area containing multiple isolated locations called **Availability Zones (AZs)**. Each Region contains **3 or more AZs**. Within each AZ are one or more data centers with independent power, networking, and connectivity. Regions are completely separate from each other, while AZs within a Region are connected by low-latency links. This structure allows customers to distribute applications across AZs or Regions for high availability and disaster recovery.
+
+**Why not the others:**
+- Same thing ✗ Regions and AZs are distinct hierarchical concepts; Regions contain AZs
+- AZs contain Regions ✗ The hierarchy is inverted; Regions contain AZs, not the reverse
+- One AZ per Region ✗ Every Region has 3 or more AZs to enable redundancy
 
 ---
 
@@ -215,8 +338,21 @@ An **AWS Region** is a geographic area containing multiple isolated locations ca
 **Question:**
 You are designing a resilient application on AWS. You want to ensure your application remains available if one data center fails. According to AWS infrastructure design, how many Availability Zones should you distribute your application across at minimum?
 
-**Answer:**
+**Options:**
+- A) 1 AZ is sufficient; AWS guarantees 100% uptime within a single AZ
+- B) At least 2 AZs, with 3 or more preferred for higher resilience
+- C) You must use all available AZs in a Region for compliance
+- D) At least 5 AZs; fewer AZs cannot provide true high availability
+
+**Answer:** **B) At least 2 AZs, with 3 or more preferred for higher resilience**
+
+**Explanation:**
 AWS recommends distributing applications across **at least 2 Availability Zones** minimum, though **3 or more AZs** is preferred for higher resilience. Each Region contains 3 or more AZs, so this is always possible. By distributing across multiple AZs within a Region, you ensure that if one AZ experiences an outage (due to hardware failure, power issues, or natural disaster), your application continues running in other AZs.
+
+**Why not the others:**
+- 1 AZ ✗ A single AZ is a single point of failure; AWS does not guarantee 100% uptime per AZ
+- All AZs required ✗ No such compliance rule; 2-3 AZs is the recommended practice
+- 5 AZs minimum ✗ Most Regions have 3-4 AZs; 2 is the minimum recommended for HA
 
 ---
 
@@ -225,37 +361,58 @@ AWS recommends distributing applications across **at least 2 Availability Zones*
 **Question:**
 Compare and contrast high availability and fault tolerance in the context of AWS infrastructure.
 
-**Answer:**
+**Options:**
+- A) They are interchangeable terms; both mean the system never experiences downtime
+- B) High Availability is only for hardware failures; Fault Tolerance is only for software failures
+- C) High Availability minimizes downtime through quick recovery; Fault Tolerance keeps systems running despite failures with zero downtime
+- D) Fault Tolerance is cheaper because it uses fewer redundant components than High Availability
 
-| **Aspect** | **High Availability** | **Fault Tolerance** |
-|:-----------|:----------------------|:-------------------|
-| **Definition** | System remains operational with minimal downtime when failures occur | System continues operating even when multiple components fail |
-| **Goal** | Quick recovery from failures | Continued operation through failures |
-| **Implementation Example** | Deploy across 2 AZs; if one fails, failover to other | Deploy across 3+ AZs with full redundancy; system works even with 1-2 AZ failures |
-| **Scope** | Component or service level | System-wide, multi-layer resilience |
-| **User Experience** | Brief downtime during failover | No downtime or interruption |
+**Answer:** **C) High Availability minimizes downtime through quick recovery; Fault Tolerance keeps systems running despite failures**
+
+**Explanation:**
+
+| **Aspect**                 | **High Availability**                                                | **Fault Tolerance**                                                               |
+|:---------------------------|:---------------------------------------------------------------------|:----------------------------------------------------------------------------------|
+| **Definition**             | System remains operational with minimal downtime when failures occur | System continues operating even when multiple components fail                     |
+| **Goal**                   | Quick recovery from failures                                         | Continued operation through failures                                              |
+| **Implementation Example** | Deploy across 2 AZs; if one fails, failover to other                 | Deploy across 3+ AZs with full redundancy; system works even with 1-2 AZ failures |
+| **Scope**                  | Component or service level                                           | System-wide, multi-layer resilience                                               |
+| **User Experience**        | Brief downtime during failover                                       | No downtime or interruption                                                       |
 
 **Key Difference:** HA accepts brief downtime and recovers quickly. FT prevents downtime entirely by continuing operation through failures.
+
+**Why not the others:**
+- Interchangeable ✗ They have distinct definitions; HA allows brief downtime, FT allows none
+- Hardware vs software ✗ Both apply to any type of failure, not split by failure type
+- FT is cheaper ✗ Fault Tolerance requires more redundancy and is typically more expensive than HA
 
 ---
 
 ### Q16: Shared Responsibility - Responsibility Division Examples
 
 **Question:**
-For each scenario, identify whether it's an AWS responsibility, customer responsibility, or shared responsibility:
+Which of the following correctly assigns responsibilities under the AWS Shared Responsibility Model?
 
-A) Securing the encryption keys to your database
-B) Maintaining the physical security of AWS data centers
-C) Patching the hypervisor software running your virtual servers
-D) Encrypting your customer's personal data
-E) Monitoring and alerting on network traffic anomalies
+**Options:**
+- A) AWS: encryption keys and data encryption; Customer: physical data center security
+- B) AWS: physical security and hypervisor patching; Customer: encryption keys, data encryption, and application monitoring
+- C) AWS: everything including encryption and application security; Customer: nothing in managed services
+- D) Customer: physical security of data centers; AWS: all encryption and access management
 
-**Answer:**
-- A) **Customer responsibility** - Customers control their encryption keys; AWS provides the tools but not the keys themselves
-- B) **AWS responsibility** - Physical security of facilities is AWS's responsibility under "security of the cloud"
-- C) **AWS responsibility** - Hypervisor patching is AWS infrastructure; customer handles OS and application patching
-- D) **Customer responsibility** - Deciding what data to encrypt and how is a customer decision
-- E) **Shared responsibility** - Depends on the service; some services provide built-in monitoring (AWS), but customers configure alerts (customer)
+**Answer:** **B) AWS: physical security and hypervisor patching; Customer: encryption keys, data encryption, and application monitoring**
+
+**Explanation:**
+Under the Shared Responsibility Model:
+- **Encryption keys** → Customer responsibility (AWS provides tools, not the keys)
+- **Physical data center security** → AWS responsibility ("security of the cloud")
+- **Hypervisor patching** → AWS responsibility (underlying infrastructure layer)
+- **Encrypting customer data** → Customer responsibility (data classification and protection decisions)
+- **Network monitoring/alerting** → Shared (AWS provides built-in monitoring; customers configure alerts)
+
+**Why not the others:**
+- A) ✗ Inverts responsibilities; physical security is always AWS; encryption keys are always customer
+- C) ✗ Even in fully managed services, data and access control remain the customer's responsibility
+- D) ✗ Customers never manage physical data centers in the cloud; that is always AWS
 
 ---
 
@@ -289,12 +446,25 @@ AWS cannot do these tasks for you—they are customer responsibilities under the
 **Question:**
 A financial services company needs to meet regulatory requirements that mandate data must be stored within the country. However, they want to use AWS's advanced analytics and machine learning services for competitive advantage. Which deployment model best fits their needs?
 
-**Answer:**
-**Hybrid Deployment** is the best fit. The company can:
+**Options:**
+- A) Cloud deployment - all services should be moved to AWS
+- B) On-premises deployment - all systems must stay locally
+- C) Hybrid deployment - keep regulated data locally, use AWS for analytics/ML
+- D) Multi-region deployment - distribute across different countries
+
+**Answer:** **C) Hybrid deployment**
+
+**Explanation:**
+Hybrid deployment allows the company to:
 - Keep sensitive regulated data on-premises in compliance with local regulations
 - Use AWS cloud services for analytics, ML, and other non-regulated workloads
 - Connect the two environments securely
 This approach balances regulatory compliance with the benefits of cloud innovation.
+
+**Why not the others:**
+- Cloud deployment ✗ Violates data residency requirements
+- On-premises ✗ Loses access to AWS analytics/ML advantages
+- Multi-region ✗ Doesn't solve local data residency needs; adds complexity
 
 ---
 
@@ -303,97 +473,141 @@ This approach balances regulatory compliance with the benefits of cloud innovati
 **Question:**
 Why would a business deploy their application across multiple AWS Regions rather than just multiple Availability Zones?
 
-**Answer:**
-While multiple AZs provide high availability within a region, deploying across **multiple Regions** provides:
-1. **Disaster recovery** - If an entire Region fails, applications continue in other Regions
-2. **Geographic redundancy** - Protection against region-wide disasters (natural disasters, regional power outages)
-3. **Lower latency** - Serve users from a Region closest to them
-4. **Compliance** - Meet data residency requirements in specific countries
-5. **Business continuity** - True geographic distribution ensures operations continue under any circumstances
+**Options:**
+- A) Regions are cheaper than Availability Zones
+- B) Protection against region-wide disasters and meeting geographic user needs
+- C) All Availability Zones are in the same location, so regions are mandatory
+- D) Regions provide better performance than AZs
 
-**Note:** Multi-Region deployment is more complex and costly than multi-AZ, so it's used when disaster recovery across regions is critical.
+**Answer:** **B) Protection against region-wide disasters and meeting geographic user needs**
+
+**Explanation:**
+While multiple AZs provide high availability within a region, deploying across **multiple Regions** provides:
+- Disaster recovery from region-wide failures
+- Lower latency for geographically distributed users
+- Compliance with data residency requirements
+- True business continuity across continents
+
+**Why not the others:**
+- Regions are cheaper ✗ Multi-region deployment is typically more expensive
+- All AZs in same location ✗ AZs within a region are separate locations
+- Better performance ✗ AZs have similar performance; regions add latency
 
 ---
 
 ### Q20: Cost Model Comparison
 
 **Question:**
-Compare the cost implications of on-premises vs AWS infrastructure for a startup:
+A startup needs 10 servers for year 1, expecting to grow to 50 servers by year 3. How would costs compare between on-premises and AWS?
 
-**Scenario:** A startup needs 10 servers for their first year, expecting to grow to 50 servers by year 3.
+**Options:**
+- A) On-premises saves ~$200,000; you buy hardware once
+- B) AWS costs more; you pay continuously instead of buying hardware
+- C) AWS saves ~$200,000; costs scale with growth vs upfront capital
+- D) They cost the same over 3 years
 
-**Answer:**
+**Answer:** **C) AWS saves ~$200,000; costs scale with growth**
 
-| **Aspect** | **On-Premises** | **AWS** |
-|:-----------|:---|:---|
-| **Year 1 Cost** | $150,000 (buy 50 servers upfront to plan for growth) | $2,000/month = $24,000 (pay for 10 servers) |
-| **Year 2 Cost** | $150,000 (same fixed cost) + maintenance | Scales to $8,000/month = $96,000 (30 servers) |
-| **Year 3 Cost** | $150,000 (same fixed cost) + maintenance | Scales to $12,000/month = $144,000 (50 servers) |
-| **Total 3-Year Cost** | ~$450,000 + maintenance & staff | ~$264,000 (scales with growth) |
-| **Key Benefit** | Predictable costs | Costs align with growth; no idle capacity |
+**Explanation:**
+| **Aspect** | **On-Premises (3-year)** | **AWS (3-year)** |
+|:---|:---|:---|
+| **Initial** | $150,000 (50 servers) | $0 |
+| **Monthly** | $0 (already paid) | Scales from $2K-$12K |
+| **Total** | ~$450,000+ | ~$264,000 |
 
-AWS's variable expense model is ideal for startups: you pay for growth, not predicted growth.
+AWS's variable expense model aligns costs with actual usage, making it ideal for growing startups.
+
+**Why not the others:**
+- On-premises saves money ✗ You pay upfront for unused capacity
+- AWS costs more ✗ AWS totals $264K vs $450K on-prem
+- Same cost ✗ AWS significantly cheaper for growing companies
 
 ---
 
 ### Q21: Cloud vs On-Premises - Agility
 
 **Question:**
-Your company wants to test a new application architecture. On-premises, this would require:
-- 4 weeks to procure hardware
-- 2 weeks for installation and configuration
-- Testing and teardown if the approach doesn't work
+Your company wants to test a new application architecture. On-premises would require 4 weeks to procure + 2 weeks to install. How does AWS improve this?
 
-How does AWS improve this scenario?
+**Options:**
+- A) AWS takes the same time but costs less
+- B) AWS allows testing in minutes, deleting resources immediately when done
+- C) AWS only helps if you commit to 3-year contracts
+- D) AWS requires the same infrastructure investment but with monthly payments
 
-**Answer:**
+**Answer:** **B) AWS allows testing in minutes, deleting resources immediately**
+
+**Explanation:**
 On AWS, you can:
-- **Launch test infrastructure in minutes** (not weeks)
-- **Run experiments and tests** without long procurement cycles
-- **Delete resources immediately** when done, stopping charges immediately
+- **Launch in minutes** instead of weeks of procurement
+- **Run experiments** without capital investment
+- **Delete immediately** and stop charges when done
 - **Fail fast and iterate** - try multiple approaches rapidly
 
-This dramatically increases agility and innovation speed. Companies can experiment with new architectures, services, and configurations without the upfront capital investment and months-long procurement cycles of on-premises.
+This dramatically increases agility and innovation speed compared to on-premises procurement cycles.
+
+**Why not the others:**
+- Same time, costs less ✗ AWS is much faster than procurement cycles
+- Requires 3-year contracts ✗ AWS offers on-demand pay-as-you-go
+- Same investment with monthly payments ✗ No upfront investment needed
 
 ---
 
 ### Q22: Shared Responsibility - Service Type Impact
 
 **Question:**
-How does the Shared Responsibility Model change depending on the type of AWS service used?
+How does the responsibility division in the Shared Responsibility Model change based on the AWS service type?
 
-**Answer:**
-The division of responsibilities varies significantly by service type:
+**Options:**
+- A) AWS responsibilities are identical regardless of service type
+- B) Customer responsibilities increase as services become more managed
+- C) AWS responsibility increases as services become more managed (IaaS → Managed → Fully Managed)
+- D) Private companies are always responsible for everything
 
-**Infrastructure Services (e.g., EC2):**
-- AWS: Physical infrastructure, hypervisor
-- Customer: OS, applications, security groups, firewalls, data encryption
+**Answer:** **C) AWS responsibility increases as services become more managed**
 
-**Managed Services (e.g., RDS):**
-- AWS: Infrastructure, OS patching, database patches, backups
-- Customer: Data encryption, access control, user management
+**Explanation:**
+| **Service Type** | **AWS Responsibility** | **Customer Responsibility** |
+|:---|:---|:---|
+| **Infrastructure (EC2)** | Physical, hypervisor | OS, apps, security groups |
+| **Managed (RDS)** | Infrastructure, DB patching | Data encryption, access control |
+| **Fully Managed (DynamoDB)** | Everything including scaling | Data encryption, access control |
 
-**Fully Managed Services (e.g., DynamoDB):**
-- AWS: Everything including OS, patching, scaling
-- Customer: Data encryption, access control
+As you move toward managed services, **AWS handles more, but data and access control remain customer responsibility.**
 
-As you move from infrastructure to managed to fully managed services, AWS takes on more responsibility, but **customers always maintain data and access control responsibility.**
+**Why not the others:**
+- Same responsibility regardless ✗ Responsibility varies significantly by service
+- Increases as more managed ✗ Opposite is true
+- Private companies always responsible ✗ All companies follow same model
 
 ---
 
 ### Q23: Definition - What Cloud Computing Actually Enables
 
 **Question:**
-Beyond just "accessing IT resources over the internet," what fundamental business capability does cloud computing enable?
+Beyond just accessing IT resources over the internet, what fundamental business capability does cloud computing enable?
 
-**Answer:**
-Cloud computing enables **organizations to scale infrastructure rapidly without upfront capital investment.** This transforms how businesses operate:
-- **Startups** can compete globally without massive CAPEX
-- **Enterprises** can experiment and innovate faster
-- **All companies** can align infrastructure costs with actual usage (variable vs fixed)
-- **Everyone** can deploy applications worldwide in minutes instead of months
+**Options:**
+- A) Only large enterprises can use technology
+- B) Rapid infrastructure scaling without upfront capital investment
+- C) Replacing all IT staff with cloud vendors
+- D) Guaranteed 100% uptime on all applications
+
+**Answer:** **B) Rapid infrastructure scaling without upfront capital investment**
+
+**Explanation:**
+Cloud computing fundamentally enables:
+- **Startups** to compete globally without massive CAPEX
+- **Enterprises** to experiment and innovate faster
+- **All companies** to align costs with usage (variable vs fixed)
+- **Everyone** to deploy worldwide in minutes instead of months
 
 This democratization of enterprise-grade infrastructure is the true power of cloud computing.
+
+**Why not the others:**
+- Only large enterprises ✗ Cloud enables all sizes to compete
+- Replaces IT staff ✗ Cloud requires different, not eliminated, IT roles
+- Guaranteed 100% uptime ✗ Cloud provides high availability, not perfection
 
 ---
 
@@ -401,31 +615,31 @@ This democratization of enterprise-grade infrastructure is the true power of clo
 
 Use this to track your review progress:
 
-| # | Category | Question | Topic | Status | Notes |
-|:--|:------|:---------|:------|:-------|:------|
-| 1 | Foundations 1 | Q1 | Client-Server Model | ⏳ | |
-| 2 | Foundations 1 | Q2 | Pay-as-You-Go | ⏳ | |
-| 3 | Foundations 2 | Q3 | Deployment Types | ⏳ | |
-| 4 | Foundations 3 | Q4 | Capacity Planning | ⏳ | |
-| 5 | Foundations 4 | Q5 | Global Infrastructure | ⏳ | |
-| 6 | Foundations 5 | Q6 | Shared Responsibility | ⏳ | |
-| 7 | Foundations 6 | Q7 | Cloud Definition | ⏳ | |
-| 8 | Foundations 1 | Q8 | AWS History | ⏳ | |
-| 9 | Foundations 3 | Q9 | Fixed to Variable Expense | ⏳ | |
-| 10 | Foundations 3 | Q10 | Economies of Scale | ⏳ | |
-| 11 | Foundations 3 | Q11 | Data Center Costs | ⏳ | |
-| 12 | Foundations 3 | Q12 | Go Global in Minutes | ⏳ | |
-| 13 | Foundations 4 | Q13 | Regions & AZs Definition | ⏳ | |
-| 14 | Foundations 4 | Q14 | AZs for Resilience | ⏳ | |
-| 15 | Foundations 4 | Q15 | HA vs Fault Tolerance | ⏳ | |
-| 16 | Foundations 5 | Q16 | Responsibility Division | ⏳ | |
-| 17 | Foundations 5 | Q17 | Real Scenario | ⏳ | |
-| 18 | Foundations 2 | Q18 | Deployment Selection | ⏳ | |
-| 19 | Foundations 4 | Q19 | Multi-Region Why | ⏳ | |
-| 20 | Foundations 1 | Q20 | Cost Comparison | ⏳ | |
-| 21 | Foundations 6 | Q21 | Agility Benefit | ⏳ | |
-| 22 | Foundations 5 | Q22 | Service Type Impact | ⏳ | |
-| 23 | Foundations 6 | Q23 | Cloud Enables | ⏳ | |
+| #  | Category              | Question | Topic                     | Status | Notes |
+|:---|:----------------------|:---------|:--------------------------|:-------|:------|
+| 1  | Cloud Fundamentals    | Q1       | Client-Server Model       | ⏳      |       |
+| 2  | Cloud Fundamentals    | Q2       | Pay-as-You-Go             | ⏳      |       |
+| 3  | Deployment Models     | Q3       | Deployment Types          | ⏳      |       |
+| 4  | Cloud Benefits & Cost | Q4       | Capacity Planning         | ⏳      |       |
+| 5  | Global Infrastructure | Q5       | Global Infrastructure     | ⏳      |       |
+| 6  | Shared Responsibility | Q6       | Shared Responsibility     | ⏳      |       |
+| 7  | Cloud Concepts        | Q7       | Cloud Definition          | ⏳      |       |
+| 8  | Cloud Concepts        | Q8       | AWS History               | ⏳      |       |
+| 9  | Cloud Benefits & Cost | Q9       | Fixed to Variable Expense | ⏳      |       |
+| 10 | Cloud Benefits & Cost | Q10      | Economies of Scale        | ⏳      |       |
+| 11 | Cloud Benefits & Cost | Q11      | Data Center Costs         | ⏳      |       |
+| 12 | Cloud Benefits & Cost | Q12      | Go Global in Minutes      | ⏳      |       |
+| 13 | Global Infrastructure | Q13      | Regions & AZs Definition  | ⏳      |       |
+| 14 | Global Infrastructure | Q14      | AZs for Resilience        | ⏳      |       |
+| 15 | Global Infrastructure | Q15      | HA vs Fault Tolerance     | ⏳      |       |
+| 16 | Shared Responsibility | Q16      | Responsibility Division   | ⏳      |       |
+| 17 | Shared Responsibility | Q17      | Real Scenario             | ⏳      |       |
+| 18 | Deployment Models     | Q18      | Deployment Selection      | ⏳      |       |
+| 19 | Global Infrastructure | Q19      | Multi-Region Why          | ⏳      |       |
+| 20 | Cloud Benefits & Cost | Q20      | Cost Comparison           | ⏳      |       |
+| 21 | Cloud Concepts        | Q21      | Agility Benefit           | ⏳      |       |
+| 22 | Shared Responsibility | Q22      | Service Type Impact       | ⏳      |       |
+| 23 | Cloud Concepts        | Q23      | Cloud Enables             | ⏳      |       |
 
 **Legend:** ⏳ = Need Review | ✅ = Confident | 📝 = Added Notes
 
@@ -433,19 +647,52 @@ Use this to track your review progress:
 
 ## Quick Facts to Remember
 
-- **Client-Server:** Client requests → Server responds
-- **Pay-as-you-go:** No upfront cost; pay only for consumption
-- **Deployment types:** Cloud (agile), On-Premises (control), Hybrid (both)
-- **Six benefits:** Variable expense, Economies of scale, No capacity guessing, Speed/agility, No data center maintenance, Go global in minutes
-- **Global Infrastructure:** Regions contain AZs; AZs contain data centers
-- **High Availability:** Distribute across AZs to stay operational if one fails
-- **Fault Tolerance:** System continues operating through multiple simultaneous failures
-- **Shared Responsibility:** AWS = "of the cloud"; Customer = "in the cloud"
-- **AWS History:** SQS (2004), S3 & EC2 (2006)
-- **Cost Model:** AWS variable aligns with startup growth; on-prem fixed doesn't
-- **Service Responsibility:** Varies by service type (IaaS → less managed → more AWS responsibility)
+**Cloud Fundamentals:**
+- **Client-Server** = Client sends request → Server processes and responds
+- **Pay-as-you-go** = No upfront cost; pay only for what you consume
+- **AWS History** = SQS (2004), S3 & EC2 (2006); rapid growth led to AWS launch
+
+**Deployment Models:**
+- **Cloud** = All resources in the cloud; agile, scalable
+- **On-Premises** = Private infrastructure; maximum control, higher cost
+- **Hybrid** = Mix of cloud and on-premises; ideal for regulated workloads
+
+**Cloud Benefits & Cost:**
+- **Six benefits** = Variable expense, Economies of scale, No capacity guessing, Speed/agility, No data center maintenance, Go global in minutes
+- **Cost Model** = AWS variable cost aligns with business growth; on-prem fixed cost doesn't
+- **Economies of scale** = AWS bulk purchasing passes savings to all customers
+
+**Global Infrastructure:**
+- **Regions** = Physical geographic locations containing multiple AZs
+- **Availability Zones** = 3+ isolated data centers per Region with independent power/networking
+- **High Availability** = Distribute across AZs; service continues if one AZ fails
+- **Fault Tolerance** = System continues operating even through multiple simultaneous failures
+
+**Shared Responsibility:**
+- **AWS** = Security *of* the cloud (hardware, networking, facilities, hypervisor)
+- **Customer** = Security *in* the cloud (OS, applications, data, access control)
+- **Service Responsibility** = Varies by service type; IaaS → more customer responsibility; managed services → more AWS responsibility
 
 ---
 
-**Last Updated:** March 19, 2026  
+## Common Exam Patterns
+
+**Pattern 1: "Which deployment model?"**
+→ Compliance/data residency + cloud agility? → Hybrid; All in cloud? → Cloud; Full control on-site? → On-Premises
+
+**Pattern 2: "Which AWS benefit applies?"**
+→ Capacity guessing problem? → Stop guessing capacity; Slow global expansion? → Go global in minutes; Upfront spend? → Trade fixed for variable
+
+**Pattern 3: "AWS or Customer responsibility?"**
+→ Physical hardware / hypervisor / facilities? → AWS; OS / application / data / encryption keys? → Customer
+
+**Pattern 4: "High availability vs fault tolerance?"**
+→ Minimise downtime, failover to other AZ? → High Availability; Continue operating through multiple failures? → Fault Tolerance
+
+**Pattern 5: "Which global infrastructure component?"**
+→ Geographic location choice? → Region; Isolated data centers within region? → Availability Zone; Content caching closer to users? → Edge Location
+
+---
+
 **Module:** Introduction to the Cloud (Module 1)
+**Total Q&As:** 23 (6 course + 17 interview/cert prep)

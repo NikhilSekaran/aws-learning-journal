@@ -12,7 +12,7 @@ This repository contains structured learning notes, lab documentation, and resou
    - **Status**: In Progress
    - **Modules**: 13
    - **Course Progress**: 30% (Modules 1–4 completed on AWS Skill Builder, Module 5 in progress)
-   - **Notes in Repo**: 8% (Module 1 documented)
+   - **Notes in Repo**: 15% (Modules 1–2 documented)
    - **Goal**: Prepare for AWS Certified Cloud Practitioner (CLF-C02) exam
 
 ## 🗂️ Repository Structure
@@ -50,4 +50,3 @@ aws-learning-journal/
 
 ---
 
-**Last Updated**: March 19, 2026
