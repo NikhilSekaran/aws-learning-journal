@@ -6,18 +6,6 @@
 
 - Q&A Review: [qa-review.md](qa-review.md)
 
-## 👨‍🏫 Course Instructors & Overview
-
-This AWS Cloud Practitioner Essentials course is delivered by experienced AWS professionals:
-
-- **Morgan Willis** – Principal Cloud Technologist with 15+ years of IT experience; passionate about teaching and supporting cloud learners through their AWS journey
-- **Rudy Chetty** – Chief Techfluencer & Principal Solutions Architect; 20+ years in technology helping customers realize their cloud transformation dreams
-- **Alan Meridian** – AWS Training & Certification instructor with 8+ years delivering cloud trainings and certifications
-
-**Course Purpose:** Build foundational cloud knowledge and establish a strong understanding of how AWS improves business operations while preparing you for AWS Cloud Practitioner certification.
-
----
-
 ## 📝 Learning Objectives
 
 By the end of Module 1, you will understand:
@@ -55,6 +43,13 @@ By the end of Module 1, you will understand:
 - In web services, clients request resources (data, computation)
 - Servers process these requests and return responses
 - Examples of requests: rain pattern analysis, medical x-rays, video streaming
+
+**Client-to-Server Mapping Examples:**
+- **Clients:** Web browsers (Chrome, Edge), Outlook app, mobile apps
+- **Web/App Servers:** Apache HTTP Server, Nginx, application APIs
+- **Data Servers:** MySQL databases
+- **Typical flow:** Client app sends request -> web/app server handles logic -> database server returns data -> response goes back to client
+- **AWS-native flow example:** Mobile app -> Amazon API Gateway/AWS Lambda -> Amazon RDS -> response to mobile app
 
 **Key Takeaway:** 
 The client initiates communication by making a request, and the server responds with the appropriate resource or service, creating a fundamental interaction model for distributed computing.
@@ -511,57 +506,13 @@ A Seattle-based e-commerce company wants to expand operations globally. Here's h
 
 ## 📌 Summary
 
-**Module 1: Foundations of AWS Cloud Computing**
+**Module Recap**
 
-**Course Context:**
-This course, delivered by experienced AWS professionals (Morgan, Rudy, and Alan), uses a progressive learning approach with analogies, real-world examples, and service demonstrations to make cloud concepts accessible and practical.
+In this section of the training, you learned fundamental concepts of cloud computing. You explored the definition and benefits of the cloud, and you were introduced to AWS Global Infrastructure. You also explored the AWS Shared Responsibility Model to clarify the division of responsibilities between AWS and customers.
 
-**Core Concepts Covered:**
-
-1. **The Client-Server Model** – Fundamental architecture where clients make requests to servers, visualized through a coffee shop analogy. This pattern is essential for understanding how cloud applications work.
-
-2. **Pay-As-You-Go Pricing** – AWS's revolutionary cost model where you only pay for resources during actual consumption, unlike traditional on-premises data centers requiring massive upfront investment and capacity planning.
-
-3. **AWS Comprehensive Platform** – A vast ecosystem of services delivering three key business benefits: Increased Agility, Lower Costs, and Faster Innovation.
-
-4. **AWS Origins** – AWS grew from Amazon's internal need to solve IT scaling challenges in the early 2000s. It launched publicly in 2004 (SQS), expanded rapidly with S3 and EC2 in 2006, and is now a global cloud leader.
-
-5. **Cloud Computing Definition** – The on-demand delivery of IT resources over the internet with pay-as-you-go pricing. This eliminates the need to own or manage physical data centers.
-
-6. **Cloud Deployment Types:**
-   - **Cloud** – Fully hosted in the cloud; maximum agility, no infrastructure management
-   - **On-Premises** – Legacy IT in your own data center; full control, limited cloud benefits
-   - **Hybrid** – Mix of cloud and on-premises; ideal for regulated workloads needing cloud scalability
-
-7. **Six Key Benefits of the AWS Cloud:**
-   - **Variable over fixed expense** – Pay only for what you use, no upfront capital investment
-   - **Economies of scale** – AWS's bulk purchasing passes cost savings to all customers
-   - **No capacity guessing** – Scale in minutes, avoid over/under-provisioning
-   - **Speed and agility** – Experiment fast, innovate more, waste less time on infrastructure
-   - **No data center maintenance** – Redirect operational effort toward customers and strategy
-   - **Go global in minutes** – Deploy worldwide without building your own international infrastructure
-
-8. **AWS Global Infrastructure:**
-   - **Regions** – Physically separate geographic locations worldwide (e.g., Paris, Tokyo, Ohio) housing applications close to customers
-   - **Availability Zones (AZs)** – 3+ isolated data centers within each Region, each with independent power, networking, and connectivity
-   - **High Availability** – Distribute resources across AZs/Regions so service continues if one location fails
-   - **Fault Tolerance** – System continues operating even when multiple components fail; resilience built into every layer
-
-9. **AWS Shared Responsibility Model:**
-   - **AWS** – Security *of* the cloud (hardware, networking, facilities, hypervisor)
-   - **Customer** – Security *in* the cloud (OS, applications, data, access control, client-side encryption)
-   - **Shared** – Server-side encryption, network traffic protection, firewall config (varies by service)
-   - Key rule: AWS cannot access your OS or data — the customer holds all keys
-
-10. **Cloud in Real Life — Concepts Working Together:**
-    - A global e-commerce company uses multiple Regions (Ireland, Singapore) to reduce latency for European and Asian customers
-    - Deploying across 2+ AZs per Region achieves high availability and fault tolerance
-    - The Shared Responsibility Model lets the company focus on data security and compliance instead of physical data center management
-    - AWS enables global reach in **minutes** instead of months/years, with no large upfront capital investment
-
-**Key Takeaway:**
-AWS cloud concepts don't operate in isolation — they work together as building blocks. Global Infrastructure reduces latency and ensures resilience; the Shared Responsibility Model clarifies security ownership; pay-as-you-go eliminates CAPEX. Together these enable any business — startup or enterprise — to operate at global scale securely and cost-effectively.
-
----
-
-**Module Status**: ✅ Completed  
+**Key Takeaways:**
+- **Cloud computing** delivers IT resources on demand with pay-as-you-go pricing.
+- **AWS Cloud benefits** include agility, faster innovation, cost optimization, and global reach.
+- **Global Infrastructure** uses Regions and Availability Zones to improve resilience and latency.
+- **High availability and fault tolerance** are achieved by distributing workloads across multiple AZs/Regions.
+- **Shared Responsibility Model** separates AWS security of the cloud from customer security in the cloud.

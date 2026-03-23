@@ -1,11 +1,13 @@
 # AWS Services Overview
 
-> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–2**.
+> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–3**.
 
 ---
 
 ## Module 1: Introduction to the Cloud Concepts
 Module 1 focuses on foundational cloud concepts rather than specific AWS services. Services are introduced in detail from Module 2 onwards.
+
+**Source Notes**: [Module 1 Notes](../courses/aws-cloud-practitioner-essentials/modules/module-01-introduction-to-the-cloud/notes.md)
 
 ### Key Historical Services Mentioned
 
@@ -16,6 +18,8 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 ---
 
 ## Module 2: Compute Services
+
+**Source Notes**: [Module 2 Notes](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md)
 
 ### Amazon EC2 (Elastic Compute Cloud)
 **What it is**: On-demand virtual servers in the cloud with flexible computing capacity
@@ -42,8 +46,6 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 **Use Cases**: Web servers, application servers, batch processing, machine learning training, databases
 
-**Documentation**: [EC2 in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#5-amazon-ec2-pricing)
-
 ---
 
 ### Amazon EC2 Auto Scaling
@@ -59,8 +61,6 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 - **Predictive Scaling** — ML-based, anticipates demand from historical patterns
 
 **Benefits**: Cost efficiency (pay only for what you use), high availability, automatic response to demand changes
-
-**Documentation**: [Auto Scaling in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#6-scaling-amazon-ec2)
 
 ---
 
@@ -80,8 +80,6 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 - **Least Response Time** — Routes to fastest responding server
 
 **Benefits**: Prevents bottlenecks, improves availability, decouples frontend/backend tiers, simplifies architecture
-
-**Documentation**: [ELB in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#7-directing-traffic-with-elastic-load-balancing)
 
 ---
 
@@ -103,8 +101,6 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 **Benefits**: Prevents message loss, enables asynchronous processing, decouples sender and receiver
 
-**Documentation**: [SQS in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#8-messaging-and-queuing)
-
 ---
 
 ### Amazon SNS (Simple Notification Service)
@@ -124,8 +120,6 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 **Benefits**: Real-time delivery, multi-channel support, flexible subscribers
 
-**Documentation**: [SNS in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#8-messaging-and-queuing)
-
 ---
 
 ### Amazon EventBridge
@@ -134,7 +128,7 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 **Key Features**:
 - Routes events between AWS services and third-party applications
 - Rule-based event routing
-- Stores undelivered events for replay
+- Supports configured retry, DLQ, and archive/replay patterns depending on setup
 - Serverless (no infrastructure to manage)
 
 **Use Cases**:
@@ -145,7 +139,130 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 **Benefits**: Simple event routing, serverless, reliable delivery, flexible routing rules
 
-**Documentation**: [EventBridge in Module 2](../courses/aws-cloud-practitioner-essentials/modules/module-02-compute-in-the-cloud/notes.md#8-messaging-and-queuing)
+---
+
+## Module 3: Exploring Compute Services
+
+**Source Notes**: [Module 3 Notes](../courses/aws-cloud-practitioner-essentials/modules/module-03-exploring-compute-services/notes.md)
+
+### AWS Lambda
+**What it is**: Serverless compute service (Function as a Service) that runs code in response to events without provisioning or managing servers
+
+**Key Features**:
+- Event-driven: code runs only when triggered (S3 upload, SQS message, HTTP request, etc.)
+- Automatically scales from 1 to thousands of concurrent executions
+- Maximum execution duration: 15 minutes per invocation
+- Billed per millisecond of compute time; cost depends on memory allocated
+
+**Key Components**:
+- **Lambda function** — your code package
+- **Trigger** — event source that initiates execution
+- **Runtime** — language environment (Python, Java, Node.js, or custom)
+- **Execution role** — IAM role granting permissions to other AWS services
+
+**Shared Responsibility**: AWS owns OS patching, scaling, and availability; customer owns application code security and IAM permissions
+
+**Use Cases**: API backends, real-time file processing, stream processing, scheduled automation, event-driven microservices
+
+---
+
+### Amazon ECS (Elastic Container Service)
+**What it is**: Fully managed container orchestration service for running Docker containers on AWS
+
+**Key Features**:
+- Manages container lifecycle: deployment, scaling, health monitoring
+- Two launch types: EC2 (full infrastructure control) or Fargate (serverless)
+- Integrates natively with ECR, ELB, IAM, and CloudWatch
+
+**Use Cases**: Microservices, API backends, containerized web applications
+
+---
+
+### Amazon EKS (Elastic Kubernetes Service)
+**What it is**: Fully managed Kubernetes service for deploying, managing, and scaling containerized applications
+
+**Key Features**:
+- Runs upstream Kubernetes — open-source ecosystem compatible
+- Two launch types: EC2 (full control) or Fargate (serverless)
+- Best for teams requiring Kubernetes portability or large-scale/hybrid deployments
+
+**Use Cases**: Large-scale containerized workloads, hybrid cloud Kubernetes clusters, teams migrating from on-prem Kubernetes
+
+---
+
+### Amazon ECR (Elastic Container Registry)
+**What it is**: Fully managed container image registry for storing, managing, and deploying container images
+
+**Key Features**:
+- Supports OCI (Open Container Initiative) standard images
+- Integrates natively with ECS, EKS, and Fargate
+- Push/pull images using standard container CLI tools
+- Secure, versioned image storage
+
+**Use Cases**: Store and version container images as part of CI/CD pipelines
+
+---
+
+### AWS Fargate
+**What it is**: Serverless compute engine for containers — provides the server infrastructure for ECS tasks and EKS pods without requiring you to manage servers
+
+**Key Features**:
+- Works with both Amazon ECS and Amazon EKS
+- No EC2 instances to provision, patch, or manage
+- Pay only for the vCPU and memory used by containers
+
+**Distinction**: Fargate is compute; ECS/EKS are orchestration. Fargate is a launch type option, not a standalone orchestrator.
+
+**Use Cases**: Serverless containerized workloads, variable-traffic microservices, teams wanting operational simplicity
+
+---
+
+### AWS Elastic Beanstalk
+**What it is**: Fully managed platform-as-a-service (PaaS) for deploying and scaling web applications
+
+**Key Features**:
+- Upload code → Beanstalk provisions environment automatically (EC2, scaling, ELB, monitoring)
+- Supports: Java, .NET, Python, Node.js, Ruby, Go, Docker, and more
+- Save and reuse environment configurations
+- Retains full visibility and control over underlying AWS resources
+
+**Use Cases**: Web applications, REST APIs, mobile backends, microservices with simple deployment needs
+
+---
+
+### AWS Batch
+**What it is**: Fully managed service for running large-scale batch computing workloads
+
+**Key Features**:
+- Automatically provisions and scales compute resources (EC2/Spot) based on job queue
+- Schedules and distributes jobs across compute fleets
+- No infrastructure management required
+
+**Use Cases**: Scientific simulations, financial analysis, media transcoding, genomics, ML training data processing
+
+---
+
+### Amazon Lightsail
+**What it is**: Simplified cloud platform providing VPS, storage, databases, and networking at predictable monthly pricing
+
+**Key Features**:
+- Pre-configured virtual private servers
+- Simple management interface — lower complexity than full AWS Console
+- Predictable, fixed monthly pricing
+
+**Use Cases**: Small websites, blogs, dev/test environments, basic web apps, beginners learning cloud
+
+---
+
+### AWS Outposts
+**What it is**: Fully managed hybrid cloud solution that extends AWS infrastructure and services to on-premises data centers
+
+**Key Features**:
+- Run AWS services locally with the same APIs, tools, and operational models as AWS regions
+- Provides compute, storage, and networking on-premises
+- Consistent hybrid cloud experience
+
+**Use Cases**: Low-latency applications, data residency/compliance requirements, remote/edge processing, migrating legacy applications
 
 ---
 
@@ -159,6 +276,15 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 | **SQS** | Messaging | Queue-based processing | Reliable, asynchronous decoupling |
 | **SNS** | Messaging | Pub-Sub notifications | Real-time multi-subscriber delivery |
 | **EventBridge** | Event Bus | Event routing | Serverless, rule-based routing |
+| **Lambda** | Serverless Compute | Event-driven functions | No servers; pay per invocation |
+| **ECS** | Container Orchestration | Docker container management | AWS-native, fully managed |
+| **EKS** | Container Orchestration | Kubernetes workloads | Open-source Kubernetes on AWS |
+| **ECR** | Container Registry | Container image storage | OCI-compliant, integrated with ECS/EKS |
+| **Fargate** | Serverless Container Compute | Run containers without servers | Works with ECS & EKS |
+| **Elastic Beanstalk** | PaaS | Web app deployment | Auto-provisions infra from code |
+| **AWS Batch** | Batch Compute | Large-scale scheduled jobs | Auto-scales; no infrastructure management |
+| **Lightsail** | Simplified Cloud | VPS + storage + networking | Predictable pricing; simple setup |
+| **Outposts** | Hybrid Cloud | AWS on-premises | Consistent AWS experience locally |
 
 ---
 

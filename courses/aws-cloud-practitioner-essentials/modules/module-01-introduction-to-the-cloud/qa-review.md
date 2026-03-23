@@ -57,9 +57,9 @@ Which aspect of AWS cloud computing best demonstrates the principle of paying on
 AWS billing is fundamentally different from traditional on-premises models in that your bill is variable month-to-month based on actual consumption. There is no need for large upfront investment or fixed costs. You can start small, scale as needed, and only pay for the resources you actually consume during each billing period.
 
 **Why not the others:**
-- Annual prepayment ✗ AWS never requires upfront payment; you pay for what you use
-- Fixed monthly bills ✗ Costs vary with consumption; low-traffic months cost less
-- Flat rate ✗ AWS pricing is based on actual usage, not a flat rate
+- A) Annual prepayment ✗ AWS core model is pay-as-you-go; some pricing options (like certain commitments) can include upfront payment, but they are optional
+- B) Fixed monthly bills ✗ Costs vary with consumption; low-traffic months cost less
+- D) Flat rate ✗ AWS pricing is based on actual usage, not a flat rate
 
 ---
 
@@ -86,7 +86,7 @@ This scenario describes a hybrid deployment because the organization combines bo
 
 **Why not the others:**
 - A) On-premises ✗ Doesn't provide the cloud-based scaling the organization needs
-- B) Public cloud ✗ Can't keep compliance-sensitive data within the country on public cloud alone
+- B) Public cloud ✗ Can work for some residency requirements, but this scenario explicitly keeps sensitive workloads on premises while using cloud for scale, which is hybrid
 - D) Data-compliance deployment ✗ Not a recognised AWS deployment model
 
 ---
@@ -194,9 +194,9 @@ Cloud computing is defined as "the on-demand delivery of IT resources over the i
 The **"pay-as-you-go pricing"** component allows businesses to avoid large upfront investments. This model means customers only pay for the resources they actually consume, without pre-paying for capacity or committing to long-term contracts. This contrasts with traditional on-premises infrastructure that requires significant capital expenditure upfront.
 
 **Why not the others:**
-- "On-demand delivery" ✗ Relates to access speed and availability, not cost structure
-- "Over the internet" ✗ Describes the delivery mechanism, not the pricing model
-- "IT resources" ✗ Describes what is available, not how it is paid for
+- A) "On-demand delivery" ✗ Relates to access speed and availability, not cost structure
+- B) "Over the internet" ✗ Describes the delivery mechanism, not the pricing model
+- D) "IT resources" ✗ Describes what is available, not how it is paid for
 
 ---
 
@@ -235,9 +235,9 @@ Your company traditionally runs two data centers and spends $500,000 annually on
 With AWS, your infrastructure costs would become variable and directly tied to consumption. Instead of paying a fixed $500,000 annually, you'd pay only for the computing resources you actually use each month. During low-usage months you pay less; during high-usage months you pay more. This allows better alignment between costs and business needs, and eliminates paying for unused capacity.
 
 **Why not the others:**
-- Same annual cost ✗ Variable pricing means you only pay for actual usage; costs typically drop
-- One-time migration fee ✗ AWS has no migration fee; ongoing costs are based on consumption
-- $500K upfront to AWS ✗ AWS has no upfront payment; pay-as-you-go eliminates capital expenditure
+- A) Same annual cost ✗ Variable pricing means you only pay for actual usage; costs typically drop
+- B) One-time migration fee ✗ AWS has no migration fee; ongoing costs are based on consumption
+- D) $500K upfront to AWS ✗ AWS has no upfront payment; pay-as-you-go eliminates capital expenditure
 
 ---
 
@@ -258,9 +258,9 @@ Why can AWS pass cost savings to customers through "Benefit from Massive Economi
 AWS operates massive global data centers and purchases hardware in huge volumes. This bulk purchasing power results in lower per-unit costs for servers, storage, and networking equipment. Because AWS serves millions of customers sharing this infrastructure, the company can pass these volume discounts to all customers—from small startups to large enterprises—allowing even small companies to benefit from enterprise-grade infrastructure at lower costs.
 
 **Why not the others:**
-- Large enterprises subsidize small customers ✗ Cost reductions come from volume purchasing, not cross-subsidization
-- Only large customers benefit ✗ All customers benefit equally from the shared infrastructure economics
-- Below-market pricing for market share ✗ Lower costs come from operational efficiency, not subsidized pricing
+- A) Large enterprises subsidize small customers ✗ Cost reductions come from volume purchasing, not cross-subsidization
+- C) Only large customers benefit ✗ All customers benefit equally from the shared infrastructure economics
+- D) Below-market pricing for market share ✗ Lower costs come from operational efficiency, not subsidized pricing
 
 ---
 
@@ -281,9 +281,9 @@ A manufacturing company currently spends $2 million annually operating its on-pr
 **"Stop spending money to run and maintain data centers"** would be most relevant. When migrating to AWS, the company eliminates all operational expenses associated with maintaining physical data center infrastructure: facility costs, electricity, cooling systems, security staff, and routine hardware maintenance. AWS takes responsibility for all physical infrastructure, allowing the company to redirect those resources toward innovation and business growth.
 
 **Why not the others:**
-- Stop guessing capacity ✗ Relevant to rightsizing, not eliminating physical facility costs
-- Go global in minutes ✗ Addresses geographic expansion, not operational cost reduction
-- Trade upfront for variable ✗ Overlapping benefit, but the $2M includes recurring operational costs, not just capital
+- A) Stop guessing capacity ✗ Relevant to rightsizing, not eliminating physical facility costs
+- B) Go global in minutes ✗ Addresses geographic expansion, not operational cost reduction
+- D) Trade upfront for variable ✗ Overlapping benefit, but the $2M includes recurring operational costs, not just capital
 
 ---
 
@@ -304,9 +304,9 @@ You are launching a new startup offering a SaaS product. You have customers in t
 AWS provides Regions across the world (e.g., us-east-1, eu-west-1, ap-southeast-1). Instead of building and operating your own data centers in each region (which takes months or years and requires large CAPEX), you can deploy your application to AWS Regions in minutes. This allows a startup to reach global customers with low latency without the traditional infrastructure costs and timeline, democratizing global-scale operations.
 
 **Why not the others:**
-- Ships hardware ✗ AWS is cloud-based; no physical hardware is sent to you
-- Speeds up data transfer ✗ Reduced latency comes from geographic proximity of Regions, not network acceleration
-- Partners with local ISPs ✗ AWS operates its own global infrastructure; no ISP partnerships required
+- A) Ships hardware ✗ AWS is cloud-based; no physical hardware is sent to you
+- C) Speeds up data transfer ✗ Reduced latency comes from geographic proximity of Regions, not network acceleration
+- D) Partners with local ISPs ✗ AWS operates its own global infrastructure; no ISP partnerships required
 
 ---
 
@@ -327,9 +327,9 @@ What is the relationship between AWS Regions and Availability Zones?
 An **AWS Region** is a geographic area containing multiple isolated locations called **Availability Zones (AZs)**. Each Region contains **3 or more AZs**. Within each AZ are one or more data centers with independent power, networking, and connectivity. Regions are completely separate from each other, while AZs within a Region are connected by low-latency links. This structure allows customers to distribute applications across AZs or Regions for high availability and disaster recovery.
 
 **Why not the others:**
-- Same thing ✗ Regions and AZs are distinct hierarchical concepts; Regions contain AZs
-- AZs contain Regions ✗ The hierarchy is inverted; Regions contain AZs, not the reverse
-- One AZ per Region ✗ Every Region has 3 or more AZs to enable redundancy
+- A) Same thing ✗ Regions and AZs are distinct hierarchical concepts; Regions contain AZs
+- B) AZs contain Regions ✗ The hierarchy is inverted; Regions contain AZs, not the reverse
+- D) One AZ per Region ✗ Every Region has 3 or more AZs to enable redundancy
 
 ---
 
@@ -350,9 +350,9 @@ You are designing a resilient application on AWS. You want to ensure your applic
 AWS recommends distributing applications across **at least 2 Availability Zones** minimum, though **3 or more AZs** is preferred for higher resilience. Each Region contains 3 or more AZs, so this is always possible. By distributing across multiple AZs within a Region, you ensure that if one AZ experiences an outage (due to hardware failure, power issues, or natural disaster), your application continues running in other AZs.
 
 **Why not the others:**
-- 1 AZ ✗ A single AZ is a single point of failure; AWS does not guarantee 100% uptime per AZ
-- All AZs required ✗ No such compliance rule; 2-3 AZs is the recommended practice
-- 5 AZs minimum ✗ Most Regions have 3-4 AZs; 2 is the minimum recommended for HA
+- A) 1 AZ ✗ A single AZ is a single point of failure; AWS does not guarantee 100% uptime per AZ
+- C) All AZs required ✗ No such compliance rule; 2-3 AZs is the recommended practice
+- D) 5 AZs minimum ✗ Most Regions have 3-4 AZs; 2 is the minimum recommended for HA
 
 ---
 
@@ -382,9 +382,9 @@ Compare and contrast high availability and fault tolerance in the context of AWS
 **Key Difference:** HA accepts brief downtime and recovers quickly. FT prevents downtime entirely by continuing operation through failures.
 
 **Why not the others:**
-- Interchangeable ✗ They have distinct definitions; HA allows brief downtime, FT allows none
-- Hardware vs software ✗ Both apply to any type of failure, not split by failure type
-- FT is cheaper ✗ Fault Tolerance requires more redundancy and is typically more expensive than HA
+- A) Interchangeable ✗ They have distinct definitions; HA allows brief downtime, FT allows none
+- B) Hardware vs software ✗ Both apply to any type of failure, not split by failure type
+- D) FT is cheaper ✗ Fault Tolerance requires more redundancy and is typically more expensive than HA
 
 ---
 
@@ -462,9 +462,9 @@ Hybrid deployment allows the company to:
 This approach balances regulatory compliance with the benefits of cloud innovation.
 
 **Why not the others:**
-- Cloud deployment ✗ Violates data residency requirements
-- On-premises ✗ Loses access to AWS analytics/ML advantages
-- Multi-region ✗ Doesn't solve local data residency needs; adds complexity
+- A) Cloud deployment ✗ Violates data residency requirements
+- B) On-premises ✗ Loses access to AWS analytics/ML advantages
+- D) Multi-region ✗ Doesn't solve local data residency needs; adds complexity
 
 ---
 
@@ -489,9 +489,9 @@ While multiple AZs provide high availability within a region, deploying across *
 - True business continuity across continents
 
 **Why not the others:**
-- Regions are cheaper ✗ Multi-region deployment is typically more expensive
-- All AZs in same location ✗ AZs within a region are separate locations
-- Better performance ✗ AZs have similar performance; regions add latency
+- A) Regions are cheaper ✗ Multi-region deployment is typically more expensive
+- C) All AZs in same location ✗ AZs within a region are separate locations
+- D) Better performance ✗ AZs have similar performance; regions add latency
 
 ---
 
@@ -518,9 +518,9 @@ A startup needs 10 servers for year 1, expecting to grow to 50 servers by year 3
 AWS's variable expense model aligns costs with actual usage, making it ideal for growing startups.
 
 **Why not the others:**
-- On-premises saves money ✗ You pay upfront for unused capacity
-- AWS costs more ✗ AWS totals $264K vs $450K on-prem
-- Same cost ✗ AWS significantly cheaper for growing companies
+- A) On-premises saves money ✗ You pay upfront for unused capacity
+- B) AWS costs more ✗ AWS totals $264K vs $450K on-prem
+- D) Same cost ✗ AWS significantly cheaper for growing companies
 
 ---
 
@@ -547,9 +547,9 @@ On AWS, you can:
 This dramatically increases agility and innovation speed compared to on-premises procurement cycles.
 
 **Why not the others:**
-- Same time, costs less ✗ AWS is much faster than procurement cycles
-- Requires 3-year contracts ✗ AWS offers on-demand pay-as-you-go
-- Same investment with monthly payments ✗ No upfront investment needed
+- A) Same time, costs less ✗ AWS is much faster than procurement cycles
+- C) Requires 3-year contracts ✗ AWS offers on-demand pay-as-you-go
+- D) Same investment with monthly payments ✗ No upfront investment needed
 
 ---
 
@@ -576,9 +576,9 @@ How does the responsibility division in the Shared Responsibility Model change b
 As you move toward managed services, **AWS handles more, but data and access control remain customer responsibility.**
 
 **Why not the others:**
-- Same responsibility regardless ✗ Responsibility varies significantly by service
-- Increases as more managed ✗ Opposite is true
-- Private companies always responsible ✗ All companies follow same model
+- A) Same responsibility regardless ✗ Responsibility varies significantly by service
+- B) Increases as more managed ✗ Opposite is true
+- D) Private companies always responsible ✗ All companies follow same model
 
 ---
 
@@ -605,9 +605,9 @@ Cloud computing fundamentally enables:
 This democratization of enterprise-grade infrastructure is the true power of cloud computing.
 
 **Why not the others:**
-- Only large enterprises ✗ Cloud enables all sizes to compete
-- Replaces IT staff ✗ Cloud requires different, not eliminated, IT roles
-- Guaranteed 100% uptime ✗ Cloud provides high availability, not perfection
+- A) Only large enterprises ✗ Cloud enables all sizes to compete
+- C) Replaces IT staff ✗ Cloud requires different, not eliminated, IT roles
+- D) Guaranteed 100% uptime ✗ Cloud provides high availability, not perfection
 
 ---
 

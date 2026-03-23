@@ -1,6 +1,6 @@
 # Module 2: Compute in the Cloud
 
-## Status: ✅ 100% Complete
+## Status: ✅ Completed
 
 ## 🔗 Quick Navigation
 
@@ -681,6 +681,10 @@ When scaling your EC2 instances, you have two approaches:
 
 To ensure your application never experiences downtime, AWS recommends deploying EC2 instances across multiple Availability Zones with redundancy.
 
+**AZ Refresher:**
+- A **Region** contains multiple **Availability Zones (AZs)**; deploying across AZs improves availability.
+- For detailed AZ and Region concepts, see Module 1: [AWS Global Infrastructure](../module-01-introduction-to-the-cloud/notes.md).
+
 **The Problem with Single Instances:**
 - If one EC2 instance fails, your application is down until you launch a replacement
 - Customers lose service immediately
@@ -1106,6 +1110,11 @@ Components communicate through an intermediary buffer or queue, decoupling them 
 **Key Difference:**
 > In tightly coupled systems, component failures cascade. In loosely coupled systems, failures are isolated and the system continues operating.
 
+**Definition: Message vs Event**
+- A **message** is data sent to a specific consumer for processing (common with queues like Amazon SQS).
+- An **event** is a notification that something happened, which can be routed to multiple interested consumers (common with Amazon EventBridge).
+- Quick rule: **Message = work to be processed**, **Event = fact that occurred**.
+
 ---
 
 #### Amazon EventBridge
@@ -1134,8 +1143,8 @@ When a customer orders food through a mobile app, multiple services need to coor
 **EventBridge Benefits:**
 - Routes events to the right services automatically
 - Services work independently at their own pace
-- If one service fails (e.g., payment service down), EventBridge stores the event
-- When the service recovers, EventBridge delivers the stored event
+- If a target service fails, EventBridge can retry delivery and route failures to configured handling paths (for example, DLQ/redrive patterns)
+- Once the target recovers, events can be processed through configured retry/redrive workflows
 - Handles high volumes of events during peak times (lunch rush, dinner rush)
 - Provides a smooth, reliable operation across the entire system
 
@@ -1328,24 +1337,7 @@ A: **It stores transaction details until the fraud detection service can process
 
 ---
 
-### 9. Module Summary and Resources
-
-**Module Recap**
-
-In these lessons about compute, you learned how Amazon EC2 and cloud resources help scale applications. You gained knowledge of EC2 instance types, pricing options, and how to choose the best instance types for your unique business needs. You also became familiar with using AWS tools and services like Elastic Load Balancing, Amazon EC2 Auto Scaling, Amazon SQS, and Amazon SNS to manage traffic and communication.
-
-**Key Takeaways:**
-- **EC2** provides flexible, scalable compute capacity on demand
-- **Instance types** are optimized for different workload requirements (general purpose, compute, memory, accelerated, storage)
-- **Pricing models** (On-Demand, Reserved, Spot, Savings Plans, Dedicated) allow you to optimize costs based on usage patterns
-- **Auto Scaling** automatically adjusts capacity based on demand, reducing costs and improving availability
-- **Elastic Load Balancing** distributes traffic evenly and decouples frontend from backend
-- **Messaging services** (SQS, SNS, EventBridge) enable loose coupling and resilient architectures
-- **Loosely coupled architectures** scale better, fail more gracefully, and are easier to modify than tightly coupled systems
-
----
-
-## 📚 Resource Links and References
+## 🔗 References & Links
 
 | **Resource**                                 | **Description**                                                              | **URL**                                                                                                                                                                                                |
 |:---------------------------------------------|:-----------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1361,20 +1353,26 @@ In these lessons about compute, you learned how Amazon EC2 and cloud resources h
 | **Amazon Simple Notification Service (SNS)** | Messaging service for sending notifications via SMS, email, mobile push      | [aws.amazon.com/sns](https://aws.amazon.com/sns/)                                                                                                                                                      |
 | **Amazon Simple Queue Service (SQS)**        | Message queuing for decoupling application components                        | [aws.amazon.com/sqs](https://aws.amazon.com/sqs/)                                                                                                                                                      |
 
----
+## ❓ Key Questions to Review
 
-## ✅ Module 2 Completion Status
+- What makes Amazon EC2 different from on-premises infrastructure?
+- How do you choose the right EC2 instance family for a workload?
+- When should you use On-Demand, Reserved, Spot, or Savings Plans?
+- How do Auto Scaling and Elastic Load Balancing improve availability and cost efficiency?
+- When should you use Amazon SQS vs Amazon SNS vs Amazon EventBridge?
+- How does the Shared Responsibility Model apply specifically to EC2 workloads?
 
-**All learning objectives achieved:**
-- ✅ What compute in the cloud means and why it matters (Sections 1-4)
-- ✅ What Amazon EC2 is and how it works (Sections 1-4)
-- ✅ The concept of multi-tenancy and how AWS manages it (Section 1)
-- ✅ Different Amazon EC2 instance types and when to use each (Section 2)
-- ✅ Amazon EC2 pricing models and when to use each (Section 5)
-- ✅ How Amazon EC2 Auto Scaling works and why it matters (Section 6)
-- ✅ What Elastic Load Balancing is and how it distributes traffic (Section 7)
-- ✅ Messaging and queuing services: Amazon SQS and Amazon SNS (Section 8)
+## 📌 Summary
 
----
+**Module Recap**
 
+In these lessons about compute, you learned how Amazon EC2 and cloud resources help scale applications. You gained knowledge of EC2 instance types, pricing options, and how to choose the best instance types for your unique business needs. You also became familiar with using AWS tools and services like Elastic Load Balancing, Amazon EC2 Auto Scaling, Amazon SQS, and Amazon SNS to manage traffic and communication.
 
+**Key Takeaways:**
+- **EC2** provides flexible, scalable compute capacity on demand
+- **Instance types** are optimized for different workload requirements (general purpose, compute, memory, accelerated, storage)
+- **Pricing models** (On-Demand, Reserved, Spot, Savings Plans, Dedicated) allow you to optimize costs based on usage patterns
+- **Auto Scaling** automatically adjusts capacity based on demand, reducing costs and improving availability
+- **Elastic Load Balancing** distributes traffic evenly and decouples frontend from backend
+- **Messaging services** (SQS, SNS, EventBridge) enable loose coupling and resilient architectures
+- **Loosely coupled architectures** scale better, fail more gracefully, and are easier to modify than tightly coupled systems

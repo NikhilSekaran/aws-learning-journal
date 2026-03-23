@@ -1,6 +1,6 @@
 # AWS Key Terms & Glossary
 
-> Updated progressively as modules are documented. Currently, covers **Modules 1–2: Introduction to the Cloud & Compute in the Cloud**.
+> Updated progressively as modules are documented. Currently, covers **Modules 1–3: Introduction to the Cloud, Compute in the Cloud & Exploring Compute Services**.
 
 ---
 
@@ -38,12 +38,49 @@
 - The processing power needed to run applications, manage data, and perform calculations
 - In the cloud, delivered on-demand through services like EC2
 
+**Container**
+- A lightweight, portable package that bundles application code with all its runtime dependencies (libraries, configs)
+- Ensures consistent behaviour across environments (dev, staging, production)
+- Shares the host OS kernel — more efficient than full VMs
+- Standard format is OCI (Open Container Initiative)
+
+**Container Orchestration**
+- Automated management of containerized workloads: deployment, scaling, scheduling, and health monitoring
+- Required when running many containers across multiple hosts
+- AWS tools: ECS (proprietary) and EKS (Kubernetes-based)
+
+**Container Registry**
+- A repository for storing, versioning, and distributing container images
+- AWS service: Amazon ECR (Elastic Container Registry)
+- Works like a Git repository, but for container images
+
 ## E
 
 **EC2 (Elastic Compute Cloud)**
 - AWS service providing on-demand virtual servers (instances) in the cloud
 - Offers flexible compute capacity that scales up or down based on needs
 - Key features: multiple instance types, various pricing models, Auto Scaling integration
+
+**ECR (Elastic Container Registry)**
+- Fully managed container image registry for storing Docker/OCI images
+- Integrates natively with ECS, EKS, and Fargate
+- Role in the workflow: store → push/pull images for deployment
+
+**ECS (Elastic Container Service)**
+- Fully managed container orchestration service for running Docker containers
+- Launch types: EC2 (you manage hosts) or Fargate (serverless)
+- AWS-native; simpler to operate than Kubernetes
+
+**EKS (Elastic Kubernetes Service)**
+- Fully managed Kubernetes service for deploying and scaling containerized applications
+- Uses upstream Kubernetes; compatible with the open-source Kubernetes ecosystem
+- Launch types: EC2 or Fargate; preferred for Kubernetes-familiar teams or hybrid deployments
+
+**Elastic Beanstalk (AWS Elastic Beanstalk)**
+- Fully managed PaaS for deploying web applications
+- Upload code → Beanstalk handles provisioning (EC2, Auto Scaling, ELB, monitoring)
+- Retains full access to underlying AWS resources
+- Supports: Java, .NET, Python, Node.js, Ruby, Go, Docker
 
 **Elastic Load Balancing (ELB)**
 - AWS service that automatically distributes incoming traffic across multiple EC2 instances
@@ -62,6 +99,18 @@
 - Integrates AWS services and third-party applications
 
 ## F
+
+**Fargate (AWS Fargate)**
+- Serverless compute engine for containers; works as a launch type for ECS and EKS
+- Removes the need to manage EC2 instances — AWS handles host provisioning, patching, scaling
+- Pay for vCPU and memory used; no idle infrastructure costs
+- Key distinction: Fargate is compute, not an orchestrator; ECS/EKS provide orchestration
+
+**Function as a Service (FaaS)**
+- Cloud execution model where developers upload individual functions rather than full servers
+- Runtime infrastructure is fully managed by the cloud provider
+- Key characteristics: event-driven, stateless, scales automatically, pay-per-execution
+- AWS implementation: AWS Lambda
 
 **Fault Tolerance**
 - System design that allows continued operation even when multiple components fail simultaneously
@@ -99,7 +148,26 @@
 - **Accelerated Computing** — GPUs for graphics and ML acceleration
 - **Storage Optimized** — High I/O for databases and data warehousing
 
+## K
+
+**Kubernetes**
+- Open-source container orchestration platform for automating deployment, scaling, and management of containerized applications
+- Organizes containers into logical units called pods; pods are grouped into clusters
+- AWS managed offering: Amazon EKS (Elastic Kubernetes Service)
+- Key advantage over ECS: ecosystem portability — same workloads can run on any cloud or on-prem Kubernetes cluster
+
 ## L
+
+**Lambda (AWS Lambda)**
+- Serverless compute service (FaaS) that runs code in response to events without managing servers
+- Event-driven: triggered by S3, SQS, API Gateway, EventBridge, etc.
+- Maximum execution duration: 15 minutes per invocation
+- Shared Responsibility: AWS manages OS, runtime, scaling; customer manages code and IAM
+
+**Lightsail (Amazon Lightsail)**
+- Simplified cloud platform offering VPS, storage, databases, and networking at fixed monthly pricing
+- Designed for lower complexity use cases and teams new to cloud
+- Best for: small websites, blogs, dev/test environments, simple web apps
 
 **Loosely Coupled Architecture**
 - System where components communicate through intermediaries (queues, buses) rather than direct connections
@@ -114,6 +182,12 @@
 - Contains: operating system, storage configuration, architecture type, pre-installed software
 - Ensures all instances launched from the same AMI are identical
 - Can be AWS-provided, custom-built, or purchased from AWS Marketplace
+
+**Managed Service**
+- AWS service where AWS handles operational tasks like OS patching, scaling, availability, and backups
+- Customer still configures and uses the service but doesn't manage underlying infrastructure
+- Spectrum: EC2 (unmanaged) → ECS/Lambda (managed/fully managed)
+- Examples: Amazon RDS, ECS, Lambda, SQS
 
 **Multi-Tenancy**
 - Infrastructure design where multiple customer instances share physical hardware
@@ -135,6 +209,11 @@
 **On-Premises Deployment**
 - Resources deployed in a company's own data center using virtualization tools
 - Provides full infrastructure control but misses most cloud benefits
+
+**Outposts (AWS Outposts)**
+- Fully managed hybrid cloud solution extending AWS infrastructure to on-premises data centers
+- Run AWS services locally with the same APIs and operational models as AWS regions
+- Use cases: data residency/compliance requirements, low-latency local processing, regulated industries
 
 ## P
 
@@ -170,6 +249,12 @@
 - Long-term capacity planning for anticipated growth
 - Can be achieved through vertical scaling (bigger instance) or horizontal scaling (more instances)
 
+**Serverless Computing**
+- Cloud execution model where the provider fully manages the underlying infrastructure
+- Developer focuses solely on application code — no servers to provision, patch, or scale
+- AWS implements serverless at different levels: Lambda (functions), Fargate (containers), Aurora Serverless (databases)
+- Key benefit: automatic scaling, pay-per-use, no idle capacity costs
+
 **Shared Responsibility Model**
 - Security framework dividing responsibilities between AWS and the customer
 - **AWS**: Security *of* the cloud — hardware, networking, facilities, hypervisor
@@ -202,6 +287,13 @@
 - Difficult to scale or modify
 - Contrasts with loosely coupled architecture
 
+## U
+
+**Unmanaged Service**
+- AWS service where the customer is responsible for all operational tasks: OS patching, security hardening, scaling, and availability
+- Provides maximum control and flexibility at the cost of operational overhead
+- Primary example: Amazon EC2 — AWS provides the hypervisor and hardware; everything above is the customer's responsibility
+
 ## V
 
 **Vertical Scaling**
@@ -212,4 +304,4 @@
 
 ---
 
-**Note**: This glossary grows as modules are documented. New terms added from Module 2 onwards.
+**Note**: This glossary grows as modules are documented. New terms added as each module is completed. Currently includes all conceptual and service-level terms from Modules 1–3.

@@ -29,13 +29,13 @@ This course introduces AWS services and core concepts that form the foundation o
 
 **Course Progress**: 30% (4 of 13 modules completed on AWS Skill Builder)
 
-**Notes in Repo**: 15% (2 of 13 modules documented)
+**Notes in Repo**: 23% (3 of 13 modules documented)
 
 | Module                                  | Course Status  | Notes in Repo |
 |-----------------------------------------|----------------|---------------|
 | 1. Introduction to the Cloud            | ✅ Completed    | ✅ Done        |
 | 2. Compute in the Cloud                 | ✅ Completed    | ✅ Done        |
-| 3. Exploring Compute Services           | ✅ Completed    | ⏳ Pending     |
+| 3. Exploring Compute Services           | ✅ Completed    | ✅ Done        |
 | 4. Going Global                         | ✅ Completed    | ⏳ Pending     |
 | 5. Networking                           | 🔄 In Progress | ⏳ Pending     |
 | 6. Storage                              | ⏳ Not Started  | ⏳ Pending     |
@@ -87,7 +87,7 @@ Additional compute options:
 - Amazon ECS and Amazon EKS
 - AWS Fargate
 
-[Notes Template](modules/module-03-exploring-compute-services/notes.md)
+[Full Notes](modules/module-03-exploring-compute-services/notes.md) | [Q&A Review](modules/module-03-exploring-compute-services/qa-review.md)
 
 ### Module 4: Going Global
 **Status**: ✅ Completed

@@ -63,49 +63,51 @@ Multi-tenancy means multiple customer instances run on the same physical server.
 ### Q3: EC2 Instance Billing on Stop/Terminate
 
 **Question:**
-A company uses EC2 instances to deploy their application. What happens if they need to stop or terminate instances?
+A company uses Amazon EC2 instances to deploy their application.
+
+What would happen if they need to stop or terminate the EC2 instances?
 
 **Options:**
-- A) You continue to be charged for compute while instances are stopped
-- B) Stopped instances automatically restart after 24 hours at no additional charge
-- C) Terminated instances can be recovered from backup within the same billing cycle
-- D) Pay only for running instances; billing stops immediately when stopped or terminated
+- A) You are still charged for the instances.
+- B) The instances will automatically restart after a set time.
+- C) You pay only for running instances, not for stopped or terminated ones.
+- D) Your instances are permanently deleted and cannot be recovered.
 
-**Answer:** **D) Pay only for running instances; billing stops immediately**
+**Answer:** **C) You pay only for running instances, not for stopped or terminated ones.**
 
 **Explanation:**
-Billing stops immediately when an instance is stopped or terminated. This is a key cost-optimization feature—you don't continue paying for idle resources.
+Amazon EC2 charges for running compute capacity. If an instance is stopped or terminated, you are no longer billed for that running instance time. This is a core cloud cost benefit: you can stop paying for compute when it is no longer in use.
 
 **Why not the others:**
-- Still charged while stopped ✗ Charges stop immediately; you only pay for running instances
-- Auto-restart after 24 hours ✗ Stopped instances require manual action or Auto Scaling to restart
-- Terminated instances recoverable ✗ Terminated instances are permanently deleted; only stopped instances can be restarted
+- A) You are still charged for the instances ✗ Charges stop when instances are stopped or terminated
+- B) The instances will automatically restart after a set time ✗ Instances do not restart automatically unless specifically configured
+- D) Your instances are permanently deleted and cannot be recovered ✗ Stopped instances can be restarted; only terminated instances are deleted
 
 ---
 
 ### Q4: Required EC2 Launch Configurations
 
 **Question:**
-What must be specified when preparing to launch an EC2 instance?
+What must be specified when preparing to launch an Amazon EC2 instance?
 
 **Options:**
-- A) The amount of storage and the number of concurrent users
-- B) The instance's geographic location and backup plan
-- C) The network bandwidth and data transfer limit
-- D) The instance type and the operating system (via AMI)
+- A) The type of instance and the operating system
+- B) The amount of storage and the number of users
+- C) The instance's location and backup plan
+- D) The network bandwidth and data transfer limit
 
-**Answer:** **D) The instance type and the operating system (via AMI)**
+**Answer:** **A) The type of instance and the operating system**
 
 **Explanation:**
 These two are essential:
 - **Instance Type** determines hardware resources (CPU, memory)
 - **AMI (OS)** determines the operating system and pre-installed software
-Other configurations (storage, security groups) are important but not "must-have" at launch.
+Storage is also required, but a default root volume is typically auto-populated by the selected AMI.
 
 **Why not the others:**
-- Storage and user count ✗ Storage is optional at launch; user count is not an EC2 configuration
-- Location and backup plan ✗ A default Region is used if not specified; backup plans are not required
-- Network bandwidth and data transfer ✗ These are determined by the instance type, not specified separately
+- B) The amount of storage and the number of users ✗ Number of users is irrelevant at launch; storage is configurable but not the primary launch requirement
+- C) The instance's location and backup plan ✗ Region can be chosen but backup plan is not required at launch
+- D) The network bandwidth and data transfer limit ✗ These are determined by the instance type, not specified separately
 
 ---
 
@@ -126,9 +128,9 @@ A financial institution is running a real-time analytics application that proces
 Memory-optimized instances are designed for workloads requiring fast in-memory processing of large datasets. This is ideal for analytics applications needing quick query results from massive data volumes.
 
 **Why not the others:**
-- General Purpose ✗ Balanced resources; not optimized for memory-heavy workloads
-- Compute Optimized ✗ Best for CPU-intensive tasks like gaming/HPC, not large in-memory datasets
-- Storage Optimized ✗ Best for locally stored data with high I/O, not in-memory processing
+- A) General Purpose ✗ Balanced resources; not optimized for memory-heavy workloads
+- B) Compute Optimized ✗ Best for CPU-intensive tasks like gaming/HPC, not large in-memory datasets
+- D) Storage Optimized ✗ Best for locally stored data with high I/O, not in-memory processing
 
 ---
 
@@ -149,9 +151,9 @@ A retail company is analyzing historical sales data stored locally with demands 
 Storage-optimized instances provide high-performance access to locally stored data with exceptional I/O throughput. They're perfect for databases and data warehousing workloads requiring consistent, fast access to large datasets.
 
 **Why not the others:**
-- General Purpose ✗ Balanced resources; not designed for high disk throughput
-- Compute Optimized ✗ Best for CPU-intensive tasks; needs fast local disk access, not raw compute
-- Accelerated Computing ✗ Uses GPU hardware; not relevant for disk-based data retrieval
+- A) General Purpose ✗ Balanced resources; not designed for high disk throughput
+- B) Compute Optimized ✗ Best for CPU-intensive tasks; needs fast local disk access, not raw compute
+- C) Accelerated Computing ✗ Uses GPU hardware; not relevant for disk-based data retrieval
 
 ---
 
@@ -174,9 +176,9 @@ What is a primary advantage of using the AWS CLI over the Management Console?
 The CLI enables you to programmatically provision resources, script repetitive tasks, and integrate AWS operations into automation pipelines. The Console is visual but manual-intensive for complex operations.
 
 **Why not the others:**
-- Visual interface ✗ That's the Management Console; CLI is text-based command-line
-- Windows only ✗ AWS CLI works on Windows, macOS, and Linux
-- One-time manual provisioning ✗ Opposite is true; CLI excels at repeatable automation
+- A) Visual interface ✗ That's the Management Console; CLI is text-based command-line
+- B) Windows only ✗ AWS CLI works on Windows, macOS, and Linux
+- D) One-time manual provisioning ✗ Opposite is true; CLI excels at repeatable automation
 
 ---
 
@@ -202,9 +204,9 @@ EC2 is an unmanaged service. AWS provides the infrastructure; you handle:
 - Access control
 
 **Why not the others:**
-- AWS manages OS/networking/applications ✗ EC2 is unmanaged; customers handle all of these
-- Customer secures physical hardware ✗ AWS handles physical hardware security ("security of the cloud")
-- AWS manages OS configuration ✗ This is the inverse; customers are responsible for their own OS
+- A) AWS manages OS/networking/applications ✗ EC2 is unmanaged; customers handle all of these
+- B) Customer secures physical hardware ✗ AWS handles physical hardware security ("security of the cloud")
+- C) AWS manages OS configuration ✗ This is the inverse; customers are responsible for their own OS
 
 ---
 
@@ -230,11 +232,9 @@ These three are essential:
 - **Storage** — Defines disk space and performance
 
 **Why not the others:**
-- Load Balancing ✗ Only needed if distributing traffic across multiple instances
-- Permissions ✗ Security groups handle network access; not required at initial launch
-- Termination Behavior ✗ Defaults exist; not required to specify at launch
-- Network Bandwidth ✗ Determined by instance type; not specified separately
-- Backup Plan ✗ Not required to launch an instance
+- A) AMI, Storage, and Load Balancing configuration ✗ Load balancing is only needed when distributing traffic across multiple instances
+- C) Instance Type, Permissions, and Termination Behavior ✗ Permissions/security access and termination behavior are not required launch essentials
+- D) AMI, Network Bandwidth limit, and Backup Plan ✗ Network bandwidth is determined by instance type, and backup plan is not required at launch
 
 ---
 
@@ -255,9 +255,9 @@ What is an AMI used for when launching an EC2 instance?
 An AMI is a template that contains everything needed to launch an instance: the OS, storage setup, architecture type, and pre-installed applications. It ensures all instances launched from the same AMI are identical.
 
 **Why not the others:**
-- Instance size ✗ Instance type is a separate selection from the AMI
-- Networking settings ✗ Security groups and VPC settings are configured separately
-- Store instance data ✗ EBS volumes or other storage services store data; AMIs are launch templates
+- A) Instance size ✗ Instance type is a separate selection from the AMI
+- B) Networking settings ✗ Security groups and VPC settings are configured separately
+- D) Store instance data ✗ EBS volumes or other storage services store data; AMIs are launch templates
 
 ---
 
@@ -283,9 +283,9 @@ Dedicated Hosts provide exclusive physical server access, allowing the company t
 - Handle specialized licensing (Windows, SQL Server)
 
 **Why not the others:**
-- Savings Plans ✗ Offers cost savings but no physical server isolation or placement control
-- On-Demand ✗ Instances share physical hosts; no control over server placement
-- Spot Instances ✗ No server control, and instances can be interrupted with 2-minute notice
+- A) Savings Plans ✗ Offers cost savings but no physical server isolation or placement control
+- B) On-Demand ✗ Instances share physical hosts; no control over server placement
+- C) Spot Instances ✗ No server control, and instances can be interrupted with 2-minute notice
 
 ---
 
@@ -310,9 +310,9 @@ Spot Instances offer up to 90% savings by bidding on spare capacity. Perfect for
 Any workload that can tolerate interruptions with a 2-minute warning.
 
 **Why not the others:**
-- On-Demand ✗ Standard pricing with no discounts; most expensive option
-- Reserved Instances ✗ Require 1-3 year commitment; better for steady, predictable workloads
-- Savings Plans ✗ Require commitment to hourly spend but don't offer the same 90% discount
+- A) On-Demand ✗ Standard pricing with no discounts; most expensive option
+- B) Reserved Instances ✗ Require 1-3 year commitment; better for steady, predictable workloads
+- C) Savings Plans ✗ Require commitment to hourly spend but don't offer the same 90% discount
 
 ---
 
@@ -338,9 +338,9 @@ On-Demand is ideal for:
 Once usage patterns stabilize, you can switch to Reserved Instances or Savings Plans for cost optimization.
 
 **Why not the others:**
-- Reserved Instances ✗ Require 1-3 year commitment; unsuitable for uncertain demand
-- Spot Instances ✗ Risk of interruption makes them unsuitable for new production applications
-- Savings Plans ✗ Require commitment to consistent hourly usage; not ideal for unknown patterns
+- A) Reserved Instances ✗ Require 1-3 year commitment; unsuitable for uncertain demand
+- B) Spot Instances ✗ Risk of interruption makes them unsuitable for new production applications
+- D) Savings Plans ✗ Require commitment to consistent hourly usage; not ideal for unknown patterns
 
 ---
 
@@ -366,9 +366,9 @@ What is the primary benefit of scalability and elasticity in AWS?
 Together, they allow you to pay only for resources you use, improving cost efficiency and customer experience.
 
 **Why not the others:**
-- Manual adjustment ✗ Manual scaling is slower and less efficient than automatic elasticity
-- Fixed resources ✗ Fixed resources waste money during low-demand periods
-- Permanently increase ✗ That describes scalability alone; elasticity adds the ability to scale back down
+- A) Manual adjustment ✗ Manual scaling is slower and less efficient than automatic elasticity
+- B) Fixed resources ✗ Fixed resources waste money during low-demand periods
+- D) Permanently increase ✗ That describes scalability alone; elasticity adds the ability to scale back down
 
 ---
 
@@ -389,9 +389,9 @@ What is the main reason for deploying EC2 instances across multiple Availability
 Multi-AZ deployment ensures that if one AZ experiences an outage, your application continues running in other AZs. This is the foundation of high availability and zero-downtime operations.
 
 **Why not the others:**
-- Increase instance power ✗ Deploying across AZs doesn't change an individual instance's hardware
-- Decrease costs via AZs ✗ Cost savings come from right-sizing and Auto Scaling, not AZ selection
-- Automatically scale instances ✗ Auto Scaling handles instance count; multi-AZ provides redundancy
+- A) Increase instance power ✗ Deploying across AZs doesn't change an individual instance's hardware
+- B) Decrease costs via AZs ✗ Cost savings come from right-sizing and Auto Scaling, not AZ selection
+- D) Automatically scale instances ✗ Auto Scaling handles instance count; multi-AZ provides redundancy
 
 ---
 
@@ -416,9 +416,9 @@ EC2 Auto Scaling automatically adjusts instance count:
 This prevents paying for unused capacity and ensures optimal resource utilization.
 
 **Why not the others:**
-- Fixed resources ✗ Fixed resources waste money during low-demand periods
-- Purchase excess resources ✗ Over-provisioning is exactly what AWS Auto Scaling avoids
-- Always run at max ✗ Running maximum capacity continuously eliminates any cost savings from cloud
+- A) Fixed resources ✗ Fixed resources waste money during low-demand periods
+- B) Purchase excess resources ✗ Over-provisioning is exactly what AWS Auto Scaling avoids
+- D) Always run at max ✗ Running maximum capacity continuously eliminates any cost savings from cloud
 
 ---
 
@@ -447,9 +447,9 @@ ELB distributes traffic using intelligent routing strategies:
 This prevents any single instance from becoming bottlenecked.
 
 **Why not the others:**
-- Manually adjusts instances ✗ That's Auto Scaling's role; ELB only distributes traffic to existing instances
-- Increases instance size ✗ ELB handles traffic routing, not vertical scaling
-- New instance per request ✗ Extremely inefficient; ELB routes to existing healthy instances
+- A) Manually adjusts instances ✗ That's Auto Scaling's role; ELB only distributes traffic to existing instances
+- B) Increases instance size ✗ ELB handles traffic routing, not vertical scaling
+- D) New instance per request ✗ Extremely inefficient; ELB routes to existing healthy instances
 
 ---
 
@@ -476,9 +476,9 @@ ELB is fundamentally a traffic distribution mechanism. It:
 Auto Scaling handles instance count; ELB handles traffic distribution.
 
 **Why not the others:**
-- Adjusts instance count ✗ That's Auto Scaling's responsibility; ELB only routes traffic
-- Removes unneeded instances ✗ Auto Scaling handles instance termination
-- Adds new instances ✗ Adding instances is Auto Scaling's job; ELB distributes to existing ones
+- A) Adjusts instance count ✗ That's Auto Scaling's responsibility; ELB only routes traffic
+- B) Removes unneeded instances ✗ Auto Scaling handles instance termination
+- D) Adds new instances ✗ Adding instances is Auto Scaling's job; ELB distributes to existing ones
 
 ---
 
@@ -507,9 +507,9 @@ What BEST describes the key difference between tightly coupled and loosely coupl
 | **Resilience**   | Single failure breaks system | System continues despite failures   |
 
 **Why not the others:**
-- Tightly coupled is more flexible ✗ Tightly coupled systems are harder to modify; loosely coupled is more flexible
-- Tightly coupled scales better ✗ Loosely coupled systems scale better due to independent components
-- Loosely coupled requires direct sharing ✗ Loosely coupled avoids direct sharing; components communicate via queues or events
+- A) Tightly coupled is more flexible ✗ Tightly coupled systems are harder to modify; loosely coupled is more flexible
+- B) Tightly coupled scales better ✗ Loosely coupled systems scale better due to independent components
+- D) Loosely coupled requires direct sharing ✗ Loosely coupled avoids direct sharing; components communicate via queues or events
 
 ---
 
@@ -536,9 +536,32 @@ SQS decouples the systems:
 This is loosely coupled resilience at its core.
 
 **Why not the others:**
-- Immediate approval ✗ SQS queues messages for processing; it doesn't approve transactions
-- Speeds up by bypassing buffers ✗ The queue IS the buffer; it enables reliable async processing
-- Tight dependencies ✗ SQS does the opposite—it decouples services so each can operate independently
+- A) Immediate approval ✗ SQS queues messages for processing; it doesn't approve transactions
+- B) Speeds up by bypassing buffers ✗ The queue IS the buffer; it enables reliable async processing
+- D) Tight dependencies ✗ SQS does the opposite—it decouples services so each can operate independently
+
+---
+
+### Q20A: Message vs Event
+
+**Question:**
+Which statement BEST distinguishes a **message** from an **event** in AWS architectures?
+
+**Options:**
+- A) A message broadcasts facts to many services, while an event is sent to one specific consumer
+- B) A message is work sent to a consumer for processing, while an event is a notification that something happened
+- C) Messages are only used with EventBridge, while events are only used with SQS
+- D) Messages and events are identical concepts with different names
+
+**Answer:** **B) A message is work sent to a consumer for processing, while an event is a notification that something happened**
+
+**Explanation:**
+In AWS patterns, **messages** often represent units of work (for example in SQS) that a consumer processes. **Events** represent state changes or facts (for example in EventBridge) that can be routed to multiple interested targets.
+
+**Why not the others:**
+- A) Reversed ✗ Broadcast/routing behavior is more characteristic of events, not queue messages
+- C) Service mapping ✗ SQS is message queuing; EventBridge is event routing — not vice versa
+- D) Identical concepts ✗ They are related but distinct design concepts used for different patterns
 
 ---
 
@@ -565,9 +588,9 @@ With predictable, stable workloads:
 This hybrid approach saves 70-75% versus all On-Demand.
 
 **Why not the others:**
-- All On-Demand ✗ No savings; paying full price for stable workload
-- All Spot ✗ Instances can be interrupted; unsuitable for 24/7 production
-- Dedicated Hosts ✗ More expensive; only needed for compliance
+- A) All On-Demand ✗ No savings; paying full price for stable workload
+- C) All Spot ✗ Instances can be interrupted; unsuitable for 24/7 production
+- D) Dedicated Hosts ✗ More expensive; only needed for compliance
 
 ---
 
@@ -591,9 +614,9 @@ ELB creates architectural decoupling:
 This separation allows backend to scale from 5 to 100 instances without frontend changes.
 
 **Why not the others:**
-- Frontend must know all IPs ✗ That's the problem ELB solves
-- ELB prevents scaling ✗ ELB enables independent scaling
-- Each frontend manages load balancing ✗ That's inefficient; ELB manages it centrally
+- A) Frontend must know all IPs ✗ That's the problem ELB solves
+- C) ELB prevents scaling ✗ ELB enables independent scaling
+- D) Each frontend manages load balancing ✗ That's inefficient; ELB manages it centrally
 
 ---
 
@@ -621,9 +644,9 @@ Compare Auto Scaling (automatic) vs manual instance scaling for handling demand 
 Auto Scaling automatically adjusts capacity in response to demand changes.
 
 **Why not the others:**
-- Same time ✗ Auto takes minutes; manual takes hours
-- Manual is cheaper ✗ Auto saves on wasted capacity
-- Auto requires operators ✗ Auto is fully automatic
+- A) Same time ✗ Auto takes minutes; manual takes hours
+- C) Manual is cheaper ✗ Auto saves on wasted capacity
+- D) Auto requires operators ✗ Auto is fully automatic
 
 ---
 
@@ -649,10 +672,9 @@ You need to choose instance types for multiple workloads. Which pairing is CORRE
 | Data warehousing | **Storage Optimized** | High I/O throughput |
 
 **Why not the others:**
-- Web servers = Memory ✗ Not needed for typical web apps
-- Databases = Compute ✗ Need memory, not just CPU
-- Analytics = Accelerated ✗ GPU not needed for analytics
-- Action: Change instance type anytime if wrong choice
+- A) Web servers = Memory ✗ Not needed for typical web apps
+- B) Databases = Compute ✗ Need memory, not just CPU
+- D) Analytics = Accelerated ✗ GPU not needed for analytics
 
 ---
 
@@ -679,9 +701,9 @@ For unpredictable demand with unknown usage patterns:
 - Can scale up or down without penalty
 
 **Why not the others:**
-- Reserved Instances ✗ Require 3-year commitment when demand is uncertain
-- Spot Instances ✗ Instances can be interrupted; unsuitable for production apps
-- Dedicated Hosts ✗ Expensive; only needed for compliance requirements
+- A) Reserved Instances ✗ Require 3-year commitment when demand is uncertain
+- B) Spot Instances ✗ Instances can be interrupted; unsuitable for production apps
+- D) Dedicated Hosts ✗ Expensive; only needed for compliance requirements
 
 ---
 
@@ -711,9 +733,9 @@ Auto Scaling with ELB provides:
 - Month 7-12: $5K/month (15-20 instances scaled up)
 
 **Why not the others:**
-- Buy 6x servers now ✗ Wastes money on idle capacity; no flexibility
-- Reserved for all growth ✗ Commits to unused capacity for 3 years
-- All Spot ✗ Instances interrupted during peak demand
+- A) Buy 6x servers now ✗ Wastes money on idle capacity; no flexibility
+- C) Reserved for all growth ✗ Commits to unused capacity for 3 years
+- D) All Spot ✗ Instances interrupted during peak demand
 
 ---
 
@@ -738,9 +760,9 @@ Mission-critical healthcare systems require **Fault Tolerance:**
 - Real-time replication ensures data consistency
 
 **Why not the others:**
-- Single instance ✗ No redundancy; any failure = downtime
-- 2 AZs (HA) ✗ Accepts brief downtime; patient records need zero downtime
-- Multi-region only ✗ Still need multi-AZ redundancy within region
+- A) Single instance ✗ No redundancy; any failure = downtime
+- B) 2 AZs (HA) ✗ Accepts brief downtime; patient records need zero downtime
+- D) Multi-region only ✗ Still need multi-AZ redundancy within region
 
 ---
 
@@ -767,9 +789,9 @@ A food delivery app needs: (1) Queue customer orders reliably, (2) Send SMS/emai
 This combination provides: reliable queuing + multi-channel notifications + intelligent routing.
 
 **Why not the others:**
-- SQS for all ✗ SNS better for multi-channel notifications
-- SNS for queuing ✗ SQS provides guaranteed delivery; SNS is best-effort
-- All same ✗ Each service optimized for different use cases
+- A) SQS for all ✗ SNS better for multi-channel notifications
+- B) SNS for queuing ✗ SQS provides guaranteed delivery; SNS is best-effort
+- D) All same ✗ Each service optimized for different use cases
 
 ---
 
@@ -795,9 +817,9 @@ Cost breakdown:
 
 **Recommendation:** Option B for production; Option C for batch/non-critical workloads.
 
-**Why not others:**
-- All On-Demand ✗ Wastes $46,650/year on unnecessary capacity
-- All Spot ✗ Production system interrupted during peak demand
+**Why not the others:**
+- A) All On-Demand ✗ Wastes $46,650/year on unnecessary capacity
+- D) All Spot ✗ Production system interrupted during peak demand
 
 ---
 
@@ -833,9 +855,9 @@ This provides:
 - ✅ Data reliability (Multi-AZ RDS)
 
 **Why not the others:**
-- Single large instance ✗ Doesn't scale; single point of failure
-- Dedicated Hosts ✗ Expensive; not needed for SaaS
-- Multiple independent apps ✗ Defeats architecture; difficult to manage
+- A) Single large instance ✗ Doesn't scale; single point of failure
+- C) Dedicated Hosts ✗ Expensive; not needed for SaaS
+- D) Multiple independent apps ✗ Defeats architecture; difficult to manage
 
 ---
 
@@ -865,6 +887,7 @@ Use this to track your review progress:
 | 18 | ELB                   | Q18      | Primary Function           | ⏳      |       |
 | 19 | Messaging             | Q19      | Tightly vs Loosely Coupled | ⏳      |       |
 | 20 | Messaging             | Q20      | SQS Banking Scenario       | ⏳      |       |
+| 20A| Messaging             | Q20A     | Message vs Event           | ⏳      |       |
 | 21 | Advanced              | Q21      | Cost Optimization          | ⏳      |       |
 | 22 | Advanced              | Q22      | Architecture Decoupling    | ⏳      |       |
 | 23 | Advanced              | Q23      | Auto vs Manual Scaling     | ⏳      |       |
@@ -945,4 +968,4 @@ Use this to track your review progress:
 ---
 
 **Module:** Compute in the Cloud (Module 2)  
-**Total Q&As:** 30 (20 course + 10 interview/cert prep)
+**Total Q&As:** 31 (21 course + 10 interview/cert prep)
