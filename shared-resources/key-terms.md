@@ -1,6 +1,6 @@
 # AWS Key Terms & Glossary
 
-> Updated progressively as modules are documented. Currently, covers **Modules 1–3: Introduction to the Cloud, Compute in the Cloud & Exploring Compute Services**.
+> Updated progressively as modules are documented. Currently, covers **Modules 1–4: Introduction to the Cloud, Compute in the Cloud, Exploring Compute Services & Going Global**.
 
 ---
 
@@ -29,6 +29,22 @@
 - The on-demand delivery of IT resources over the internet with pay-as-you-go pricing
 - Eliminates the need to own or manage physical data centres
 
+**CloudFormation (AWS CloudFormation)**
+- Infrastructure as code (IaC) service for modeling and provisioning AWS resources using templates
+- Uses declarative templates to define what resources should exist
+- Enables consistent, repeatable deployments across Regions and accounts
+- Reduces manual configuration drift and operational errors
+
+**CloudFront (Amazon CloudFront)**
+- AWS content delivery network (CDN) service
+- Caches content at edge locations to reduce latency for end users
+- Commonly used for images, videos, APIs, and web application assets
+
+**Content Delivery Network (CDN)**
+- Distributed network that caches and serves content close to users
+- Improves response time and transfer speed for globally distributed audiences
+- AWS primary CDN service: Amazon CloudFront
+
 **Cloud Deployment**
 - A deployment model where all components are hosted and managed in the cloud
 - Also called Public Cloud
@@ -54,7 +70,19 @@
 - AWS service: Amazon ECR (Elastic Container Registry)
 - Works like a Git repository, but for container images
 
+## D
+
+**DNS (Domain Name System)**
+- Naming system that translates human-readable domain names into IP addresses
+- Enables users to access services with URLs instead of numeric addresses
+- AWS managed DNS service: Amazon Route 53
+
 ## E
+
+**Edge Location**
+- AWS site outside standard Regions used to cache and deliver content close to users
+- Core part of the AWS global edge network
+- Used by CloudFront and other edge-aware services to reduce latency
 
 **EC2 (Elastic Compute Cloud)**
 - AWS service providing on-demand virtual servers (instances) in the cloud
@@ -117,6 +145,13 @@
 - Achieved by spreading workloads across multiple AZs and Regions with redundant infrastructure
 - Goes beyond high availability — the system doesn't just recover quickly, it keeps running
 
+## G
+
+**Global Accelerator (AWS Global Accelerator)**
+- AWS networking service that routes traffic through the AWS global network
+- Improves performance and availability for globally distributed applications
+- Complements Region/AZ design with optimized global routing paths
+
 ## H
 
 **High Availability**
@@ -139,6 +174,11 @@
 - Ensures one instance doesn't interfere with others on the same physical host
 
 ## I
+
+**Infrastructure as Code (IaC)**
+- Practice of defining and managing infrastructure with machine-readable files/templates
+- Enables versioning, automation, consistency, and repeatability
+- Common AWS implementation: AWS CloudFormation
 
 **Instance Type**
 - Classification of EC2 instances based on hardware capabilities
@@ -304,4 +344,4 @@
 
 ---
 
-**Note**: This glossary grows as modules are documented. New terms added as each module is completed. Currently includes all conceptual and service-level terms from Modules 1–3.
+**Note**: This glossary grows as modules are documented. New terms added as each module is completed. Currently includes all conceptual and service-level terms from Modules 1–4.

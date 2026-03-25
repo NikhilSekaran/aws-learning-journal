@@ -1,6 +1,6 @@
 # AWS Services Overview
 
-> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–3**.
+> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–4**.
 
 ---
 
@@ -266,6 +266,59 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 ---
 
+## Module 4: Going Global
+
+**Source Notes**: [Module 4 Notes](../courses/aws-cloud-practitioner-essentials/modules/module-04-going-global/notes.md)
+
+### AWS CloudFormation
+**What it is**: Infrastructure as code (IaC) service that models and provisions AWS resources from declarative templates
+
+**Key Features**:
+- Define infrastructure in version-controlled text templates
+- Consistent, repeatable provisioning across accounts and Regions
+- Automates API calls in the background to create required resources
+- Helps reduce manual configuration drift and deployment errors
+
+**Use Cases**: CI/CD infrastructure pipelines, multi-Region rollout consistency, repeatable environment setup
+
+---
+
+### Amazon CloudFront
+**What it is**: Content delivery network (CDN) that caches and serves content from edge locations close to end users
+
+**Key Features**:
+- Delivers images, videos, APIs, and application content with low latency
+- Uses AWS global edge network outside standard Region boundaries
+- Improves user experience by reducing content retrieval time
+
+**Use Cases**: Global web content delivery, media distribution, API acceleration
+
+---
+
+### AWS Global Accelerator
+**What it is**: Networking service that improves performance by routing traffic through the AWS global network
+
+**Key Features**:
+- Improves path selection from users to application endpoints
+- Supports globally distributed application entry patterns
+- Complements edge and global deployment architectures
+
+**Use Cases**: Global applications requiring improved performance and availability routing
+
+---
+
+### Amazon Route 53
+**What it is**: Managed DNS service that routes user requests to internet applications
+
+**Key Features**:
+- Translates human-readable domain names into machine-readable IP addresses
+- Supports global traffic routing patterns
+- Integrates with other AWS services for resilient endpoint resolution
+
+**Use Cases**: Domain management, global DNS routing, highly available application endpoints
+
+---
+
 ## Service Comparison Matrix
 
 | **Service** | **Type** | **Use Case** | **Key Benefit** |
@@ -285,6 +338,10 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 | **AWS Batch** | Batch Compute | Large-scale scheduled jobs | Auto-scales; no infrastructure management |
 | **Lightsail** | Simplified Cloud | VPS + storage + networking | Predictable pricing; simple setup |
 | **Outposts** | Hybrid Cloud | AWS on-premises | Consistent AWS experience locally |
+| **CloudFormation** | IaC / Automation | Template-based infrastructure provisioning | Repeatable and consistent deployments |
+| **CloudFront** | CDN / Edge | Low-latency global content delivery | Cached delivery from edge locations |
+| **Global Accelerator** | Networking | Global traffic acceleration | Improved path performance and availability |
+| **Route 53** | DNS | Domain routing to applications | Global DNS with resilient routing |
 
 ---
 

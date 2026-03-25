@@ -29,14 +29,14 @@ This course introduces AWS services and core concepts that form the foundation o
 
 **Course Progress**: 30% (4 of 13 modules completed on AWS Skill Builder)
 
-**Notes in Repo**: 23% (3 of 13 modules documented)
+**Notes in Repo**: 31% (4 of 13 modules documented)
 
 | Module                                  | Course Status  | Notes in Repo |
 |-----------------------------------------|----------------|---------------|
 | 1. Introduction to the Cloud            | ✅ Completed    | ✅ Done        |
 | 2. Compute in the Cloud                 | ✅ Completed    | ✅ Done        |
 | 3. Exploring Compute Services           | ✅ Completed    | ✅ Done        |
-| 4. Going Global                         | ✅ Completed    | ⏳ Pending     |
+| 4. Going Global                         | ✅ Completed    | ✅ Done        |
 | 5. Networking                           | 🔄 In Progress | ⏳ Pending     |
 | 6. Storage                              | ⏳ Not Started  | ⏳ Pending     |
 | 7. Databases                            | ⏳ Not Started  | ⏳ Pending     |
@@ -97,7 +97,7 @@ Global infrastructure:
 - Edge locations and CloudFront
 - Global application deployment
 
-[Notes Template](modules/module-04-going-global/notes.md)
+[Full Notes](modules/module-04-going-global/notes.md) | [Q&A Review](modules/module-04-going-global/qa-review.md)
 
 ### Module 5: Networking
 **Status**: 🔄 In Progress
