@@ -27,9 +27,9 @@ This course introduces AWS services and core concepts that form the foundation o
 
 ## 📊 Progress Overview
 
-**Course Progress**: 30% (4 of 13 modules completed on AWS Skill Builder)
+**Course Progress**: 38% (5 of 13 modules completed on AWS Skill Builder)
 
-**Notes in Repo**: 31% (4 of 13 modules documented)
+**Notes in Repo**: 38% (5 of 13 modules documented)
 
 | Module                                  | Course Status  | Notes in Repo |
 |-----------------------------------------|----------------|---------------|
@@ -37,7 +37,7 @@ This course introduces AWS services and core concepts that form the foundation o
 | 2. Compute in the Cloud                 | ✅ Completed    | ✅ Done        |
 | 3. Exploring Compute Services           | ✅ Completed    | ✅ Done        |
 | 4. Going Global                         | ✅ Completed    | ✅ Done        |
-| 5. Networking                           | 🔄 In Progress | ⏳ Pending     |
+| 5. Networking                           | ✅ Completed    | ✅ Done        |
 | 6. Storage                              | ⏳ Not Started  | ⏳ Pending     |
 | 7. Databases                            | ⏳ Not Started  | ⏳ Pending     |
 | 8. AI/ML and Data Analytics             | ⏳ Not Started  | ⏳ Pending     |
@@ -100,14 +100,15 @@ Global infrastructure:
 [Full Notes](modules/module-04-going-global/notes.md) | [Q&A Review](modules/module-04-going-global/qa-review.md)
 
 ### Module 5: Networking
-**Status**: 🔄 In Progress
+**Status**: ✅ Completed
 
-Topics covering:
-- VPC (Virtual Private Cloud)
-- Subnets and gateways
-- Network access control and security groups
+Core services:
+- Amazon VPC, subnets, internet gateway, virtual private gateway
+- AWS Client VPN, Site-to-Site VPN, PrivateLink, Direct Connect
+- Network ACLs and security groups (stateless vs. stateful)
+- Amazon Route 53, CloudFront, Global Accelerator
 
-[Notes Template](modules/module-05-networking/notes.md)
+[Full Notes](modules/module-05-networking/notes.md) | [Q&A Review](modules/module-05-networking/qa-review.md)
 
 ### Module 6: Storage
 **Status**: ⏳ Not Started

@@ -1,6 +1,6 @@
 # AWS Services Overview
 
-> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–4**.
+> Quick reference for AWS services encountered in courses. Updated progressively as modules are documented. Currently covers **Modules 1–5**.
 
 ---
 
@@ -319,6 +319,158 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 
 ---
 
+## Module 5: Networking
+
+**Source Notes**: [Module 5 Notes](../courses/aws-cloud-practitioner-essentials/modules/module-05-networking/notes.md)
+
+### Amazon VPC (Virtual Private Cloud)
+**What it is**: A logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network you define
+
+**Key Features**:
+- Full control over virtual networking environment (IP ranges, subnets, route tables, gateways)
+- Contains public subnets (internet-accessible) and private subnets (internal only)
+- Resources in private subnets are protected from direct internet access
+
+**Use Cases**: Isolating workloads, multi-tier application architectures, secure internal networks
+
+---
+
+### Internet Gateway
+**What it is**: A connection between a VPC and the public internet
+
+**Key Features**:
+- Allows public traffic from the internet to access resources in your VPC
+- Required for any subnet to be classified as "public"
+- Horizontally scaled, redundant, and highly available by default
+
+**Use Cases**: Hosting public-facing web servers, load balancers, and other internet-accessible resources
+
+---
+
+### Virtual Private Gateway
+**What it is**: The VPC-side endpoint for a VPN connection
+
+**Key Features**:
+- Allows encrypted VPN traffic from approved private networks into the VPC
+- Works with AWS Site-to-Site VPN
+- Only accepts traffic from pre-approved networks
+
+**Use Cases**: Connecting on-premises corporate networks to AWS via encrypted VPN
+
+---
+
+### AWS Client VPN
+**What it is**: A fully managed, elastic VPN service for remote workers and on-premises networks
+
+**Key Features**:
+- Automatically scales up or down based on user demand
+- Enables remote employees to securely access AWS resources and corporate networks
+- Encrypted connection over the public internet
+
+**Use Cases**: Remote workforce access, secure connectivity for distributed teams
+
+---
+
+### AWS Site-to-Site VPN
+**What it is**: A managed VPN service that creates an encrypted IPsec connection between an on-premises data center and AWS
+
+**Key Features**:
+- Encrypted tunnel over the public internet
+- Connects entire branch offices or data centers to an AWS VPC
+- Faster to set up and lower cost than Direct Connect; shares internet bandwidth
+
+**Use Cases**: Connecting data centers or branch offices to AWS VPC securely
+
+---
+
+### AWS PrivateLink
+**What it is**: A highly available technology for privately connecting your VPC to AWS services and third-party SaaS services without using the public internet
+
+**Key Features**:
+- Traffic stays within the AWS network — no public internet exposure
+- Works for accessing AWS services or exposing SaaS services privately
+- Does not require VPC peering, internet gateway, or NAT device
+
+**Use Cases**: Private SaaS service access, secure intra-VPC service communication
+
+---
+
+### AWS Direct Connect
+**What it is**: A dedicated private physical connection between an on-premises data center and AWS
+
+**Key Features**:
+- Bypasses the public internet entirely — private, dedicated bandwidth
+- Consistent low-latency performance; not subject to internet congestion
+- Higher cost and longer setup time than VPN; greater reliability and consistency
+- Suitable for large-scale data transfer, compliance-sensitive workloads, and hybrid cloud
+
+**Use Cases**: Large-scale data migration, latency-sensitive workloads, regulated industries requiring private connectivity
+
+---
+
+### Network Access Control List (Network ACL)
+**What it is**: A stateless firewall that controls inbound and outbound traffic at the subnet level
+
+**Key Features**:
+- Stateless: both inbound AND outbound rules must be configured explicitly for every traffic flow
+- Evaluates rules in numbered order; first match wins
+- Default network ACL allows all inbound and outbound traffic
+- Custom network ACLs deny all traffic by default until rules are added
+
+**Use Cases**: Subnet-level traffic control, compliance-driven access restrictions
+
+---
+
+### Security Groups
+**What it is**: A stateful virtual firewall that controls inbound and outbound traffic at the resource (instance) level
+
+**Key Features**:
+- Stateful: return traffic is automatically allowed — no separate outbound rule required
+- Default security group denies all inbound traffic; allows all outbound
+- Multiple security groups can be assigned to one instance
+- Can reference other security groups as traffic sources
+
+**Use Cases**: Fine-grained instance-level access control for EC2, RDS, Lambda, and other resources
+
+---
+
+### NAT Gateway
+**What it is**: A managed Network Address Translation service allowing private subnet instances to connect to the internet outbound only
+
+**Key Features**:
+- Allows instances in private subnets to initiate outbound internet connections (e.g., software updates)
+- Prevents external services from initiating connections to private instances
+- Fully managed — no EC2 instance to provision or maintain
+
+**Use Cases**: Private EC2 instances downloading patches or updates from the internet
+
+---
+
+### Amazon Transit Gateway
+**What it is**: A network transit hub that interconnects multiple VPCs and on-premises networks at scale
+
+**Key Features**:
+- Simplifies complex many-to-many VPC connectivity (replaces full-mesh VPC peering)
+- Single connection point for all attached VPCs and VPN/Direct Connect connections
+- Scales to thousands of VPCs
+
+**Use Cases**: Large-scale multi-VPC architectures, centralized network management
+
+---
+
+### Amazon API Gateway
+**What it is**: A fully managed service for creating, publishing, maintaining, monitoring, and securing APIs at any scale
+
+**Key Features**:
+- Handles hundreds of thousands of concurrent API calls
+- Supports REST, HTTP, and WebSocket APIs
+- Integrates with Lambda, EC2, and other AWS backends
+- Built-in authorization, throttling, and monitoring
+
+**Use Cases**: Serverless API backends, microservice front doors, mobile and web API endpoints
+
+---
+
 ## Service Comparison Matrix
 
 | **Service** | **Type** | **Use Case** | **Key Benefit** |
@@ -342,6 +494,18 @@ Module 1 focuses on foundational cloud concepts rather than specific AWS service
 | **CloudFront** | CDN / Edge | Low-latency global content delivery | Cached delivery from edge locations |
 | **Global Accelerator** | Networking | Global traffic acceleration | Improved path performance and availability |
 | **Route 53** | DNS | Domain routing to applications | Global DNS with resilient routing |
+| **Amazon VPC** | Networking | Isolated virtual network in the cloud | Full control over network topology and routing |
+| **Internet Gateway** | Networking | Connect VPC to public internet | Required for public subnet internet access |
+| **Virtual Private Gateway** | VPN | Encrypted VPN endpoint on VPC side | Restricts access to approved networks only |
+| **Client VPN** | VPN | Remote worker secure access to AWS | Fully managed, auto-scaling VPN service |
+| **Site-to-Site VPN** | VPN | Branch/data center to AWS encrypted tunnel | Fast setup; shares internet bandwidth |
+| **PrivateLink** | Private Connectivity | Private VPC-to-service access | No public internet exposure |
+| **Direct Connect** | Private Connectivity | Dedicated private link to AWS | Consistent low latency; bypasses internet |
+| **Network ACL** | Network Security | Subnet-level stateless firewall | First line of defense at subnet boundary |
+| **Security Groups** | Network Security | Instance-level stateful firewall | Return traffic automatically allowed |
+| **NAT Gateway** | Networking | Outbound internet from private subnets | Blocks inbound connections from internet |
+| **Transit Gateway** | Networking | Interconnect VPCs and on-premises at scale | Scalable hub-and-spoke network model |
+| **API Gateway** | API Management | Create and manage APIs at any scale | Auth, throttling, routing, and monitoring built-in |
 
 ---
 
@@ -378,6 +542,32 @@ EventBridge
 Multiple Targets (Lambda, SQS, SNS, EC2)
 ```
 **Benefit**: Serverless event routing; decoupled components
+
+### Pattern 4: Layered Network Security
+```
+Internet
+  ↓
+Internet Gateway
+  ↓
+Network ACL (stateless — subnet level)
+  ↓
+Security Group (stateful — instance level)
+  ↓
+EC2 Instance (private subnet)
+```
+**Benefit**: Defense in depth — two independent security layers protect resources at different levels
+
+### Pattern 5: Hybrid Connectivity
+```
+On-Premises Data Center
+  ↓
+Direct Connect (dedicated) OR Site-to-Site VPN (encrypted over internet)
+  ↓
+Virtual Private Gateway
+  ↓
+Amazon VPC (private subnet)
+```
+**Benefit**: Secure private connectivity from on-premises to AWS without traversing the public internet
 
 ---
 

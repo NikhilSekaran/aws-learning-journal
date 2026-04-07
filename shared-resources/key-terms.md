@@ -1,6 +1,6 @@
 # AWS Key Terms & Glossary
 
-> Updated progressively as modules are documented. Currently, covers **Modules 1–4: Introduction to the Cloud, Compute in the Cloud, Exploring Compute Services & Going Global**.
+> Updated progressively as modules are documented. Currently covers **Modules 1–5: Introduction to the Cloud, Compute in the Cloud, Exploring Compute Services, Going Global & Networking**.
 
 ---
 
@@ -70,12 +70,24 @@
 - AWS service: Amazon ECR (Elastic Container Registry)
 - Works like a Git repository, but for container images
 
+**Client VPN (AWS Client VPN)**
+- Fully managed, elastic VPN service for remote workers and on-premises networks
+- Automatically scales up or down based on user demand
+- Enables secure access to AWS resources and corporate networks from any location
+- Connection is encrypted over the public internet
+
 ## D
 
 **DNS (Domain Name System)**
 - Naming system that translates human-readable domain names into IP addresses
 - Enables users to access services with URLs instead of numeric addresses
 - AWS managed DNS service: Amazon Route 53
+
+**Direct Connect (AWS Direct Connect)**
+- Dedicated private physical connection between an on-premises data center and AWS
+- Bypasses the public internet entirely — consistent low-latency, high-bandwidth connectivity
+- Higher cost and longer setup than VPN; does not share internet bandwidth
+- Best for large-scale data transfer, latency-sensitive workloads, and compliance requirements
 
 ## E
 
@@ -180,6 +192,12 @@
 - Enables versioning, automation, consistency, and repeatability
 - Common AWS implementation: AWS CloudFormation
 
+**Internet Gateway**
+- A connection between a VPC and the public internet
+- Enables public traffic from the internet to reach resources in a VPC
+- Required to make a subnet "public"
+- Horizontally scaled, redundant, and highly available by default
+
 **Instance Type**
 - Classification of EC2 instances based on hardware capabilities
 - **General Purpose** — Balanced compute, memory, networking (default choice)
@@ -234,6 +252,24 @@
 - Hypervisor provides isolation so instances can't interfere with each other
 - Enables AWS to maximize resource utilization and offer lower costs
 
+## N
+
+**NAT Gateway (Network Address Translation Gateway)**
+- Managed service allowing instances in a private subnet to make outbound internet connections
+- External services cannot initiate connections back to those private instances
+- Provides private subnet instances with one-way internet access (e.g., for software updates)
+- Fully managed — no instance to provision or maintain
+
+**Network ACL (Network Access Control List)**
+- Stateless firewall operating at the subnet level
+- Evaluates every packet independently — both inbound and outbound rules must be explicitly configured
+- Default network ACL allows all traffic; custom network ACLs deny all until rules are added
+- Rules are processed in numbered order; first match wins
+
+**Networking**
+- The practice of connecting computers and devices so they can exchange data and resources
+- In the AWS Cloud, networking includes VPCs, subnets, gateways, DNS, and global connectivity services
+
 ## O
 
 **On-Demand**
@@ -262,6 +298,12 @@
 - No upfront investment; billing varies month to month based on usage
 - Contrasts with traditional fixed-cost data center spending
 
+**PrivateLink (AWS PrivateLink)**
+- Highly available technology for privately connecting a VPC to AWS services and third-party SaaS services
+- Traffic stays within the AWS network — no public internet exposure
+- Does not require VPC peering, internet gateway, or NAT device
+- Commonly used to access or expose services privately across VPC boundaries
+
 **Pricing Models (EC2)**
 - **On-Demand** — Pay per hour; maximum flexibility
 - **Reserved Instances** — Commit 1–3 years; up to 75% discount
@@ -288,6 +330,12 @@
 - The ability of a system to handle increased load by adding resources over time
 - Long-term capacity planning for anticipated growth
 - Can be achieved through vertical scaling (bigger instance) or horizontal scaling (more instances)
+
+**Security Group**
+- Stateful virtual firewall controlling inbound and outbound traffic at the resource (instance) level
+- Stateful: return traffic is automatically allowed without an explicit outbound rule
+- Default security group denies all inbound traffic; allows all outbound
+- Can be assigned to EC2 instances, RDS databases, Lambda, and other resources
 
 **Serverless Computing**
 - Cloud execution model where the provider fully manages the underlying infrastructure
@@ -319,6 +367,22 @@
 - Receiver pulls messages at its own pace (asynchronous)
 - Messages persist until explicitly deleted; guarantees "at least once" delivery
 
+**Stateful Packet Filtering**
+- Firewall technique that tracks the state of active connections
+- Return traffic for an established connection is automatically allowed without a separate rule
+- Used by: Security Groups (instance level)
+
+**Stateless Packet Filtering**
+- Firewall technique that evaluates each packet independently with no memory of previous packets
+- Both inbound AND outbound rules must be explicitly defined for every traffic flow
+- Used by: Network ACLs (subnet level)
+
+**Subnet**
+- A section of a VPC used to organize and isolate resources
+- **Public subnet**: has a route to the internet via an Internet Gateway — hosts internet-facing resources
+- **Private subnet**: no direct route to the internet — hosts databases, app servers, and internal services
+- Resources within a subnet communicate freely; cross-subnet traffic is controlled by network ACLs
+
 ## T
 
 **Tightly Coupled Architecture**
@@ -326,6 +390,11 @@
 - Failure in one component cascades to others
 - Difficult to scale or modify
 - Contrasts with loosely coupled architecture
+
+**Transit Gateway (Amazon Transit Gateway)**
+- Network transit hub that interconnects multiple VPCs and on-premises networks
+- Simplifies complex many-to-many VPC connectivity — replaces full-mesh VPC peering
+- Single connection point that scales to thousands of VPCs
 
 ## U
 
@@ -341,6 +410,17 @@
 - Makes an instance "bigger"
 - Limited by maximum instance size available
 - Simpler but less flexible than horizontal scaling
+
+**Virtual Private Gateway**
+- The VPC-side endpoint for a VPN connection
+- Allows encrypted VPN traffic from approved private networks into the VPC
+- Works with AWS Site-to-Site VPN to connect on-premises networks to AWS securely
+
+**VPC (Amazon Virtual Private Cloud)**
+- A logically isolated section of the AWS Cloud where you launch resources in a virtual network you define
+- Full control over IP address ranges, subnets, route tables, and gateways
+- Contains public subnets (internet-accessible) and private subnets (internal only)
+- Foundational networking construct — almost all AWS workloads run inside a VPC
 
 ---
 

@@ -11,8 +11,8 @@ This repository contains structured learning notes, lab documentation, and resou
 ### 1. **[AWS Cloud Practitioner Essentials](courses/aws-cloud-practitioner-essentials/README.md)**
    - **Status**: In Progress
    - **Modules**: 13
-   - **Course Progress**: 30% (Modules 1–4 completed on AWS Skill Builder, Module 5 in progress)
-   - **Notes in Repo**: 31% (Modules 1–4 documented)
+   - **Course Progress**: 38% (Modules 1–5 completed on AWS Skill Builder)
+   - **Notes in Repo**: 38% (Modules 1–5 documented)
    - **Goal**: Prepare for AWS Certified Cloud Practitioner (CLF-C02) exam
 
 ## 🗂️ Repository Structure
